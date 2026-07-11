@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP X - Discover</title>
+    <style>
+        /* Base Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121212; /* Deep dark background */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Logo Positioning */
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+        }
+
+        /* Centered Card */
+        .card {
+            background-color: #1a1a1a; /* Royal Charcoal */
+            padding: 40px;
+            border-radius: 20px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Title Style */
+        .card h1 {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        /* Description Style */
+        .card p {
+            color: #b3b3b3;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        /* Tablet Shape Button */
+        .explore-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #e5e4e2; /* Platinum thin border */
+            border-radius: 50px;
+            color: #e5e4e2;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+            background-color: #e5e4e2;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">TOP X</div>
+
+    <div class="card">
+        <h1>DISCOVER</h1>
+        <p>
+            Experience our new platform designed for efficiency. 
+            Unlock your full potential with our tailored tools, 
+            crafted to elevate your digital experience today.
+        </p>
+        <a href="#" class="explore-btn">EXPLORE</a>
+    </div>
+
+</body>
+</html>

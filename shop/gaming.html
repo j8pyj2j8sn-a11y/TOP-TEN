@@ -2,46 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATEGORY | TOP TEN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TOP X - Discover</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
-        
         body {
-            font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at center, #3e4446 0%, #202324 40%, #0a0a0a 100%);
-            color: #ffffff;
-            min-height: 100vh;
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #222222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: #d1d1d1;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-container {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        .about-btn {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            padding: 8px 20px;
+            border: 1px solid #4a4a4a;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .about-btn:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .card {
+            width: 640px;
+            aspect-ratio: 16 / 9;
+            background-color: #555555;
+            border-radius: 40px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: inset 10px 10px 20px #444444, 
+                        inset -10px -10px 20px #666666;
+            border: 1px solid #4a4a4a;
         }
-        h1 { font-family: 'Playfair Display', serif; }
-        
-        .metal-gradient {
-            background: linear-gradient(135deg, #a8a9ad 0%, #e8e8e8 50%, #717478 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        .card:hover {
+            transform: scale(1.02);
+            /* Added platinum glow to the card hover effect */
+            box-shadow: 0 0 20px #E5E4E2, 
+                        inset 10px 10px 20px #444444, 
+                        inset -10px -10px 20px #666666;
         }
-        
-        .nav-border { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #cccccc;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+        }
+
+        .explore-btn {
+            padding: 15px 45px;
+            background: linear-gradient(145deg, #333333, #2a2a2a);
+            border: 1px solid #1a1a1a;
+            border-radius: 50px;
+            color: #ffffff;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .explore-btn:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
-    <nav class="w-full p-8 nav-border flex justify-between items-center">
-        <a href="../index.html" class="flex items-center">
-            <h1 class="metal-gradient text-3xl font-bold tracking-widest">TOP TEN</h1>
-        </a>
-        <a href="../shop.html" class="text-gray-400 hover:text-white transition uppercase text-sm tracking-widest border border-white/10 px-4 py-2 rounded-lg hover:border-white/30">
-            ← Back
-        </a>
-    </nav>
+    <div class="logo">TOP X</div>
 
-    <main class="flex-grow">
-    </main>
+    <div class="nav-container">
+        <a href="#" class="about-btn">ABOUT</a>
+    </div>
+
+    <div class="card">
+        <h1>DISCOVER</h1>
+        <p>
+            Experience our new platform designed for efficiency.<br>
+            Unlock your full potential with our tailored tools,<br>
+            crafted to elevate your digital experience.
+        </p>
+        <a href="https://www.google.com" class="explore-btn">EXPLORE</a>
+    </div>
 
 </body>
 </html>
