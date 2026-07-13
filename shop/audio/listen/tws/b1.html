@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
-        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         .premium-font { font-family: 'Playfair Display', serif; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
         .border-platinum { border: 1px solid #e5e4e2; }
@@ -22,29 +22,39 @@
         <button onclick="history.back()" class="text-xs md:text-sm uppercase tracking-[0.2em] border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition duration-300">Back</button>
     </nav>
 
-    <!-- Content Area -->
-    <main class="flex-grow p-4 md:p-6 w-full max-w-7xl mx-auto flex flex-col justify-center gap-8 pt-24 md:pt-28">
-        
-        <section>
-    <main class="flex-grow p-4 md:p-12 w-full max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+    <main class="flex-grow p-4 md:p-12 w-full max-w-6xl mx-auto mt-24 pt-8">
+        <div class="grid md:grid-cols-2 gap-12 items-start mb-20">
+            <!-- Product Image -->
             <div class="glass border-platinum rounded-2xl overflow-hidden p-2 pop-effect">
                 <img src="images/1.jpg" alt="Oppo Enco Air 5 Pro" class="w-full h-auto object-cover rounded-xl">
             </div>
+
+            <!-- Product Details -->
             <div>
                 <h2 class="premium-font text-4xl mb-6 uppercase tracking-widest">Oppo Enco Air 5 Pro</h2>
                 <p class="text-gray-400 mb-8 leading-relaxed">Experience pro-level noise cancellation and immersive audio with the Enco Air 5 Pro, designed for those who refuse to compromise on sound quality or comfort.</p>
-                <a href="https://link.amazon/B0bzfwKU9t" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-black border-2 border-black px-10 py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition pop-effect">Buy Now</a>
-                <div class="flex items-center gap-2 mt-6">
-                    <div class="flex text-yellow-500"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                    <span class="text-sm text-gray-400">(4.8 / 5.0 - 500+ Reviews)</span>
+
+                <!-- Check Price Header -->
+                <div class="mb-6">
+                    <h3 class="text-sm uppercase tracking-[0.3em] text-white font-bold border-b border-white pb-2 inline-block">Check The Price</h3>
+                </div>
+
+                <!-- Buy Options Grid -->
+                <div id="buy-grid" class="flex flex-wrap gap-2 mb-6">
+                    <a href="https://link.amazon/B0gsLrGSb" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Amazon</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Flipkart</a>
+                    <a href="https://www.cashify.in/oppo-enco-air-5-pro-earbud-price-in-india" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">CASHIFY</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Reliance</a>
+                    <a href="https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.oppo.com%2Fin%2Fproduct%2Foppo-enco-air5-pro.P.P1110134" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Official</a>
                 </div>
             </div>
         </div>
+
+        <!-- Specifications and Detailed Insight -->
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass border-platinum p-8 rounded-2xl pop-effect">
                 <h3 class="premium-font text-2xl mb-6 uppercase tracking-widest text-gray-300">Key Specifications</h3>
-                <ul class="space-y-4">
+                <ul class="space-y-4 text-sm">
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Driver</span> <span class="text-gray-400">12mm Titanium-Coated</span></li>
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>ANC</span> <span class="text-gray-400">55dB Active Noise Cancellation</span></li>
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Battery</span> <span class="text-gray-400">Up to 54 Hours</span></li>
@@ -60,5 +70,14 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            const href = btn.getAttribute('href');
+            if (!href || href === '#' || href === '' || href === 'INSERT_LINK_HERE') {
+                btn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

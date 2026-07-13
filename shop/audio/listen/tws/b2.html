@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
-        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         .premium-font { font-family: 'Playfair Display', serif; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
         .border-platinum { border: 1px solid #e5e4e2; }
@@ -22,29 +22,39 @@
         <button onclick="history.back()" class="text-xs md:text-sm uppercase tracking-[0.2em] border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition duration-300">Back</button>
     </nav>
 
-    <!-- Content Area -->
-    <main class="flex-grow p-4 md:p-6 w-full max-w-7xl mx-auto flex flex-col justify-center gap-8 pt-24 md:pt-28">
-        
-        <section>
-    <main class="flex-grow p-4 md:p-12 w-full max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+    <main class="flex-grow p-4 md:p-12 w-full max-w-6xl mx-auto mt-24 pt-8">
+        <div class="grid md:grid-cols-2 gap-12 items-start mb-20">
+            <!-- Product Image -->
             <div class="glass border-platinum rounded-2xl overflow-hidden p-2 pop-effect">
                 <img src="images/2.jpg" alt="Realme Buds Air 8" class="w-full h-auto object-cover rounded-xl">
             </div>
+
+            <!-- Product Details -->
             <div>
                 <h2 class="premium-font text-4xl mb-6 uppercase tracking-widest">Realme Buds Air 8</h2>
                 <p class="text-gray-400 mb-8 leading-relaxed">Dominating with bass-heavy performance and industry-leading ANC, the Realme Buds Air 8 is built for the modern audiophile who demands power.</p>
-                <a href="https://link.amazon/B0g4tG7Jk" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-black border-2 border-black px-10 py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition pop-effect">Buy Now</a>
-                <div class="flex items-center gap-2 mt-6">
-                    <div class="flex text-yellow-500"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                    <span class="text-sm text-gray-400">(4.7 / 5.0 - 800+ Reviews)</span>
+
+                <!-- Check Price Header -->
+                <div class="mb-6">
+                    <h3 class="text-sm uppercase tracking-[0.3em] text-white font-bold border-b border-white pb-2 inline-block">Check The Price</h3>
+                </div>
+
+                <!-- Buy Options Grid -->
+                <div id="buy-grid" class="flex flex-wrap gap-2 mb-6">
+                    <a href="https://link.amazon/B0g4tG7Jk" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Amazon</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Flipkart</a>
+                    <a href="https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Frealme-buds-air-8-dual-dynamic-bass-drivers-master-grey%2Fp-mp000000030018349%3Fef_id%3DCjwKCAjwmdLSBhANEiwAkREMN9ZKrNp5aeMYfISUwnt7p-Jqa-iuPVmmmXmZN3C1e_effFgilB8KlxoCHUcQAvD_BwE%3AG%3As%26s_kwcid%3DAL!856!3!669824279235!!!g!2381176990022!%7Bkeyword%26gclsrc%3Daw.ds%26%26cid%3Dps%3AGA-LS-ELX-STD-All-Category-16-08-23_ELX_STD_All_Category%26gad_source%3D4%26gad_campaignid%3D20451459822%26gbraid%3D0AAAAADeBiBzaX3kPDl5vRSkyXb0pDxtXU%26gclid%3DCjwKCAjwmdLSBhANEiwAkREMN9ZKrNp5aeMYfISUwnt7p-Jqa-iuPVmmmXmZN3C1e_effFgilB8KlxoCHUcQAvD_BwE" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">TATA QLIQ</a>
+                    <a href="https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.reliancedigital.in%2Fproduct%2Frealme-buds-air-8-11-mm-6-mm-dual-dynamic-bass-drivers-58-hrs-playtime-55-db-anc6-mic-enc-45-ms-low-latency-360-spatial-audio-hi-res-lhdc-ip55-dust-water-resistant-bt-v54-master-gold-mnn82l-10008251%3Fgad_source%3D4%26gad_campaignid%3D22584995645%26gbraid%3D0AAAAADthdYnR4PurHgx23WoX2kr1LF5cA%26gclid%3DCjwKCAjwmdLSBhANEiwAkREMNxcc9VfnuEJ-hJV-9LXP7EjTpV7zCYzDuMKKYoCArR8_gCWRGoV70xoChroQAvD_BwE" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Reliance</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Official</a>
                 </div>
             </div>
         </div>
+
+        <!-- Specifications and Detailed Insight -->
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass border-platinum p-8 rounded-2xl pop-effect">
                 <h3 class="premium-font text-2xl mb-6 uppercase tracking-widest text-gray-300">Key Specifications</h3>
-                <ul class="space-y-4">
+                <ul class="space-y-4 text-sm">
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Drivers</span> <span class="text-gray-400">11mm + 6mm Dual Dynamic</span></li>
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>ANC</span> <span class="text-gray-400">55dB Smart ANC</span></li>
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Playtime</span> <span class="text-gray-400">58 Hours</span></li>
@@ -60,5 +70,14 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            const href = btn.getAttribute('href');
+            if (!href || href === '#' || href === '' || href === 'INSERT_LINK_HERE') {
+                btn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

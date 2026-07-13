@@ -7,77 +7,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); 
-            color: #ffffff; 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            overflow-x: hidden; 
-        }
-        
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         .premium-font { font-family: 'Playfair Display', serif; }
-        .glass { 
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(10px); 
-        }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
         .border-platinum { border: 1px solid #e5e4e2; }
-
-        .pop-effect {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .pop-effect:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-        }
+        .pop-effect { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .pop-effect:hover { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 255, 255, 0.15); }
     </style>
 </head>
 <body>
-
     <nav class="fixed top-0 left-0 w-full z-50 px-4 md:px-6 py-4 border-b border-white/5 flex items-center justify-between bg-[#0a0a0a]/90 backdrop-blur-md">
         <a href="../../../../index.html" class="premium-font text-lg md:text-2xl tracking-[0.1em] md:tracking-[0.2em] hover:text-gray-400 transition">TOP TEN</a>
         <h1 class="premium-font text-sm md:text-2xl tracking-[0.1em] uppercase hidden sm:block">THE AUDIO PEOPLE</h1>
         <button onclick="history.back()" class="text-xs md:text-sm uppercase tracking-[0.2em] border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition duration-300">Back</button>
     </nav>
 
-    <!-- Content Area -->
-    <main class="flex-grow p-4 md:p-6 w-full max-w-7xl mx-auto flex flex-col justify-center gap-8 pt-24 md:pt-28">
-        
-        <section>
-
-    <main class="flex-grow p-4 md:p-12 w-full max-w-6xl mx-auto">
-        
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+    <main class="flex-grow p-4 md:p-12 w-full max-w-6xl mx-auto mt-24 pt-8">
+        <div class="grid md:grid-cols-2 gap-12 items-start mb-20">
+            <!-- Product Image -->
             <div class="glass border-platinum rounded-2xl overflow-hidden p-2 pop-effect">
                 <img src="images/p2.jpg" alt="Sony ULT Wear" class="w-full h-auto object-cover rounded-xl">
             </div>
 
+            <!-- Product Details -->
             <div>
                 <h2 class="premium-font text-4xl mb-6 uppercase tracking-widest">Sony ULT Wear</h2>
                 <p class="text-gray-400 mb-8 leading-relaxed">Engineered for bass lovers. The ULT Wear headphones deliver massive power and deep, punchy sound with signature Sony noise-canceling technology.</p>
-                
-                <a href="https://link.amazon/B0aDUZeqr" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="inline-block bg-white text-black border-2 border-black px-10 py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition pop-effect">
-                   Buy Now
-                </a>
-                
-                <div class="flex items-center gap-2 mt-6">
-                    <div class="flex text-yellow-500">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <span class="text-sm text-gray-400">(4.7 / 5.0 - 95 Reviews)</span>
+
+                <!-- Check Price Header -->
+                <div class="mb-6">
+                    <h3 class="text-sm uppercase tracking-[0.3em] text-white font-bold border-b border-white pb-2 inline-block">Check The Price</h3>
+                </div>
+
+                <!-- Buy Options Grid -->
+                <div id="buy-grid" class="flex flex-wrap gap-2 mb-6">
+                    <a href="https://link.amazon/B0aDUZeqr" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Amazon</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Flipkart</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Croma</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Reliance</a>
+                    <a href="#" class="buy-btn flex-grow text-center bg-white/10 hover:bg-white hover:text-black py-3 border border-white/20 transition uppercase tracking-widest text-[10px] font-bold">Official</a>
                 </div>
             </div>
         </div>
 
+        <!-- Specifications and Detailed Insight -->
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass border-platinum p-8 rounded-2xl pop-effect">
                 <h3 class="premium-font text-2xl mb-6 uppercase tracking-widest text-gray-300">Key Specifications</h3>
-                <ul class="space-y-4">
+                <ul class="space-y-4 text-sm">
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Sound Mode</span> <span class="text-gray-400">ULT Power Sound</span></li>
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>ANC</span> <span class="text-gray-400">Integrated V1 Processor</span></li>
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Battery</span> <span class="text-gray-400">30 Hours</span></li>
@@ -86,18 +63,21 @@
                     <li class="flex justify-between border-b border-white/10 pb-2"><span>Charging</span> <span class="text-gray-400">USB-C Quick Charge</span></li>
                 </ul>
             </div>
-
             <div class="glass border-platinum p-8 rounded-2xl pop-effect">
                 <h3 class="premium-font text-2xl mb-6 uppercase tracking-widest text-gray-300">Detailed Insight</h3>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                    The ULT Wear is all about impact. With a dedicated button to boost low-end frequencies, it transforms your listening experience, making it perfect for hip-hop, EDM, and rock.
-                </p>
-                <p class="text-gray-400 leading-relaxed">
-                    Despite the focus on bass, it maintains impressive clarity in the mids and highs, balanced by Sony's world-class noise cancellation that keeps the world at bay.
-                </p>
+                <p class="text-gray-400 leading-relaxed mb-6">The ULT Wear is all about impact. With a dedicated button to boost low-end frequencies, it transforms your listening experience, making it perfect for hip-hop, EDM, and rock.</p>
+                <p class="text-gray-400 leading-relaxed">Despite the focus on bass, it maintains impressive clarity in the mids and highs, balanced by Sony's world-class noise cancellation that keeps the world at bay.</p>
             </div>
         </div>
     </main>
 
+    <script>
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            const href = btn.getAttribute('href');
+            if (!href || href === '#' || href === '' || href === 'INSERT_LINK_HERE') {
+                btn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
