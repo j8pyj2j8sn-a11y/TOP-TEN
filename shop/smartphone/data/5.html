@@ -11,23 +11,28 @@
         .premium-font { font-family: 'Playfair Display', serif; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #333; }
-        @media (max-width: 767px) { #mobile-menu { transition: transform 0.3s ease-in-out; } .hidden-menu { transform: translateX(-100%); } }
+        
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        @media (max-width: 767px) { 
+            .hidden-menu { transform: translateX(-100%); }
+            .show-menu { transform: translateX(0); }
+        }
     </style>
 </head>
-<body class="flex flex-col h-screen overflow-hidden">
+<body class="min-h-screen">
 
     <!-- Top Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#0a0a0a]/80 backdrop-blur-lg">
         <button id="menu-btn" class="md:hidden text-white uppercase text-[10px] tracking-widest border border-white/20 px-3 py-1">Menu</button>
         <a href="../../../index.html" class="premium-font text-xl md:text-2xl tracking-[0.2em]">TECH TEN</a>
-        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 30k</h1>
+        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 10k</h1>
         <a href="../../../shop.html" class="text-xs uppercase tracking-[0.2em] border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition duration-300">Back</a>
     </nav>
 
     <!-- Sidebar -->
-    <aside id="mobile-menu" class="fixed left-0 top-[73px] h-[calc(100vh-73px)] w-64 border-r border-white/10 bg-[#0a0a0a] p-3 z-40 hidden-menu md:translate-x-0 md:flex flex-col justify-evenly">
+    <aside id="mobile-menu" class="fixed left-0 top-[73px] h-[calc(100vh-73px)] w-64 border-r border-white/10 bg-[#0a0a0a] p-3 z-40 hidden-menu md:translate-x-0 md:flex flex-col overflow-y-auto">
         <h2 class="premium-font text-gray-400 uppercase tracking-[0.1em] text-center text-xs pb-2 border-b border-white/10">Categories</h2>
-        <div class="flex flex-col flex-grow justify-evenly">
+        <div class="flex flex-col gap-2 pt-4">
             <a href="1.html" class="block border border-white/10 bg-white/5 hover:bg-white/10 py-2.5 transition-all group"><span class="block text-xs font-semibold tracking-wider group-hover:text-yellow-500 text-center">Below 10,000</span></a>
             <a href="2.html" class="block border border-white/10 bg-white/5 hover:bg-white/10 py-2.5 transition-all group"><span class="block text-xs font-semibold tracking-wider group-hover:text-yellow-500 text-center">10K - 20K</span></a>
             <a href="3.html" class="block border border-white/10 bg-white/5 hover:bg-white/10 py-2.5 transition-all group"><span class="block text-xs font-semibold tracking-wider group-hover:text-yellow-500 text-center">20K - 30K</span></a>
@@ -43,61 +48,83 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="ml-0 md:ml-64 flex-1 p-2 pt-20 overflow-y-auto">
+    <main class="md:ml-64 p-2 pt-24">
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-2">
             <script>
                 const linksData = [
-                    [{name:"Amazon", url:"https://amazon.in"}, {name:"Flipkart", url:"https://amazon.in"}, {name:"Reliance", url:"#"}, {name:"Croma", url:"https://amazon.in"}, {name:"Official", url:"https://amazon.in"}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:"#"}, {name:"Croma", url:"#"}, {name:"Official", url:"#"}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:""}, {name:"Reliance", url:""}, {name:"Croma", url:""}, {name:"Official", url:"#"}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:"#"}, {name:"Croma", url:"#"}, {name:"Official", url:"#"}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:"https://amazon.in"}, {name:"Croma", url:"#"}, {name:"Official", url:"#"}],
-                    [{name:"Amazon", url:""}, {name:"Flipkart", url:""}, {name:"Reliance", url:"#"}, {name:"Croma", url:""}, {name:"Official", url:""}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:""}, {name:"Croma", url:""}, {name:"Official", url:"#"}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:"#"}, {name:"Croma", url:"#"}, {name:"Official", url:"#"}],
-                    [{name:"Amazon", url:"https://amazon.in"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:"v"}, {name:"Croma", url:"#"}, {name:"Official", url:""}],
-                    [{name:"Amazon", url:"#"}, {name:"Flipkart", url:"#"}, {name:"Reliance", url:"#"}, {name:"Croma", url:"#"}, {name:"Official", url:"#"}]
+                    [{name:"AMZ", url:"12"}, {name:"FLK", url:"47"}, {name:"OFF", url:"jk"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
+                    [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
                 ];
 
-                for(let i = 0; i < 10; i++) {
-                    const buttons = linksData[i]
-                        .filter(l => l.url !== "" && l.url !== "#")
-                        .map(l => `<button onclick="window.location.href='${l.url}'" class="flex-1 border border-white/20 py-2 text-[11px] uppercase hover:bg-white hover:text-black transition">${l.name}</button>`)
-                        .join('');
+                const phoneData = [
+                    {name:"Samsung Galaxy F16 5G", specs:["6.7-inch FHD+ AMOLED", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+5MP+2MP", "13MP", "5000mAh", "25W", "5G"], pros:["Bright Super AMOLED", "Reliable updates", "Good battery"], cons:["No charger", "Average low-light camera", "25W charging"], about:"Samsung Galaxy F16 5G is one of the best choices in the budget segment for users who value display quality and long-term software support."},
+                    {name:"CMF Phone 2 Pro", specs:["6.77-inch AMOLED", "120Hz", "Dimensity 7300", "6GB/8GB", "128GB", "50MP+8MP", "16MP", "5000mAh", "33W", "5G"], pros:["Powerful performance", "Excellent AMOLED", "Clean software"], cons:["Limited service", "No charger", "Night photography"], about:"The CMF Phone 2 Pro delivers flagship-like performance in the budget segment. The Dimensity 7300 processor easily handles gaming, multitasking, and demanding applications."},
+                    {name:"Redmi 14C 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Good processor", "Long battery", "Smooth 120Hz"], cons:["HD+ resolution", "Slow charging", "Pre-installed apps"], about:"Redmi 14C 5G offers dependable performance with Qualcomm's efficient Snapdragon 4 Gen 2 chipset. The large 120Hz display provides smooth scrolling and enjoyable video playback."},
+                    {name:"Motorola G45 5G", specs:["6.5-inch LCD", "120Hz", "Snapdragon 6s Gen 3", "4GB/8GB", "128GB", "50MP+2MP", "16MP", "5000mAh", "20W", "5G"], pros:["Near-stock Android", "Stereo speakers", "Reliable"], cons:["HD+ display", "Average camera", "Charging speed"], about:"Motorola G45 5G is perfect for users who prefer a clean Android experience without unnecessary software. The Snapdragon processor ensures responsive everyday performance."},
+                    {name:"POCO M7 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Smooth performance", "Great battery", "Large display"], cons:["HD+ resolution", "Slow charging", "Bloatware"], about:"The POCO M7 5G is designed for users looking for dependable everyday performance with modern 5G connectivity. Powered by the Snapdragon 4 Gen 2 processor, it handles multitasking."},
+                    {name:"Vivo T4 Lite 5G", specs:["6.74-inch LCD", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+2MP", "8MP", "6000mAh", "15W", "5G"], pros:["Huge 6000mAh battery", "Good performance", "IP64 rating"], cons:["Slow charging", "HD+ display", "Bloatware"], about:"The Vivo T4 Lite 5G stands out with its massive 6000mAh battery, making it ideal for users who need exceptional battery life. It comfortably lasts up to two days with moderate use."},
+                    {name:"Realme Narzo 80 Lite 5G", specs:["6.67-inch LCD", "120Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP AI", "8MP", "6000mAh", "15W", "5G"], pros:["Excellent battery", "Stereo speakers", "120Hz"], cons:["HD+ resolution", "Slow charging", "Average selfies"], about:"Realme Narzo 80 Lite 5G offers an excellent balance of battery life, smooth performance, and durability. Its large battery easily powers the phone for extended periods."},
+                    {name:"Infinix Note 50X 5G", specs:["6.67-inch FHD+", "120Hz", "Dimensity 7300 U", "6GB/8GB", "128GB", "50MP", "16MP", "5500mAh", "45W", "5G"], pros:["Powerful chipset", "45W charging", "FHD+ display"], cons:["Camera processing", "XOS bloatware", "Limited updates"], about:"The Infinix Note 50X 5G is one of the most powerful smartphones in this segment. It combines a Full HD+ display, fast 45W charging, and the Dimensity 7300 Ultimate processor."},
+                    {name:"Lava Blaze Dragon 5G", specs:["6.74-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP", "8MP", "5000mAh", "18W", "5G"], pros:["Clean Android", "Good performance", "Solid build"], cons:["Average cameras", "HD+ display", "Slow charging"], about:"Lava Blaze Dragon 5G delivers a clean Android experience with no unnecessary software. The Snapdragon 4 Gen 2 chipset ensures reliable daily performance."},
+                    {name:"Tecno Pova 7 5G", specs:["6.78-inch FHD+", "120Hz", "Dimensity 7300 U", "8GB", "256GB", "50MP AI", "16MP", "6000mAh", "45W", "5G"], pros:["Gaming performance", "Big battery/Fast charge", "FHD+ 120Hz"], cons:["Bulky design", "Average camera", "HiOS bloatware"], about:"The Tecno Pova 7 5G is designed for gamers and power users. Its Dimensity 7300 Ultimate processor delivers excellent gaming performance, while the 6000mAh battery ensures extended usage."}
+                ];
+
+                for(let i = 0; i < phoneData.length; i++) {
+                    const p = phoneData[i];
+                    const validLinks = linksData[i].filter(l => l.url !== "#" && l.url !== "");
+                    const buttons = validLinks.map(l => `<button onclick="window.location.href='${l.url}'" class="flex-1 border border-white/20 py-2 text-[10px] uppercase hover:bg-white hover:text-black transition">${l.name}</button>`).join('');
                     
+                    const priceSection = validLinks.length > 0 ? `
+                        <div class="p-4 mt-auto">
+                            <div class="text-[10px] text-center text-white/60 uppercase tracking-[0.2em] mb-2 font-bold">CHECK THE PRICE</div>
+                            <div class="flex gap-1 w-full">
+                                ${buttons}
+                            </div>
+                        </div>
+                    ` : '';
+
                     document.write(`
-                        <div class="bg-[#0f0f0f] border border-white/10 hover:border-yellow-500/50 transition-all flex flex-col h-auto">
+                        <div class="bg-[#0f0f0f] border border-[#E5E4E2] transition-all duration-300 hover:scale-[1.02] flex flex-col h-auto">
                             <div class="flex flex-col md:flex-row gap-4 p-4">
-                                <img src="smartphone/images/${i+1}.jpg" class="aspect-square w-full md:w-64 bg-white/5 flex-shrink-0 object-cover" alt="Product ${i+1}">
+                                <div class="w-full md:w-64 flex-shrink-0">
+                                    <img src="../images/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
+                                </div>
                                 <div class="w-full flex flex-col">
-                                    <h3 class="text-2xl md:text-3xl uppercase tracking-widest mb-4 text-center">Product ${i+1}</h3>
+                                    <h3 class="text-2xl md:text-3xl uppercase tracking-widest mb-4 text-center">${p.name}</h3>
                                     <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-[12px] text-gray-400">
-                                        ${Array(10).fill('<div>• Specification Point</div>').join('')}
-                                    </div>
-                                    <div class="mt-4 text-[11px]">
-                                        <div class="text-green-500 font-bold mb-1">PROS:</div>
-                                        <div class="text-gray-400">• Pros point one</div>
-                                        <div class="text-gray-400">• Pros point two</div>
-                                        <div class="text-gray-400">• Pros point three</div>
-                                        <div class="text-red-500 font-bold mt-2 mb-1">CONS:</div>
-                                        <div class="text-gray-400">• Cons point one</div>
-                                        <div class="text-gray-400">• Cons point two</div>
-                                        <div class="text-gray-400">• Cons point three</div>
+                                        <div>• <strong>Display:</strong> ${p.specs[0]}</div><div>• <strong>Refresh:</strong> ${p.specs[1]}</div>
+                                        <div>• <strong>Processor:</strong> ${p.specs[2]}</div><div>• <strong>RAM:</strong> ${p.specs[3]}</div>
+                                        <div>• <strong>Storage:</strong> ${p.specs[4]}</div><div>• <strong>Rear:</strong> ${p.specs[5]}</div>
+                                        <div>• <strong>Front:</strong> ${p.specs[6]}</div><div>• <strong>Battery:</strong> ${p.specs[7]}</div>
+                                        <div>• <strong>Charging:</strong> ${p.specs[8]}</div><div>• <strong>Network:</strong> ${p.specs[9]}</div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="text-[12px] md:text-[14px] text-gray-400 space-y-2 border-y border-white/5 py-4 px-4">
-                                <div>• First descriptive line about the device</div>
-                                <div>• Second descriptive line about the device</div>
-                                <div>• Third descriptive line about the device</div>
-                                <div>• Fourth descriptive line about the device</div>
-                                <div>• Fifth descriptive line about the device</div>
+                            <!-- About, Pros, and Cons section -->
+                            <div class="px-4 pb-4">
+                                <div class="text-[12px] md:text-[14px] text-gray-400 leading-relaxed border-t border-white/5 pt-4 mb-4">
+                                    ${p.about}
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-[11px]">
+                                    <div>
+                                        <div class="text-green-500 font-bold mb-1">PROS:</div>
+                                        ${p.pros.map(pr => `<div class="text-gray-400">• ${pr}</div>`).join('')}
+                                    </div>
+                                    <div>
+                                        <div class="text-red-500 font-bold mb-1">CONS:</div>
+                                        ${p.cons.map(co => `<div class="text-gray-400">• ${co}</div>`).join('')}
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="flex gap-1 w-full p-4 mt-auto">
-                                ${buttons}
-                            </div>
+                            ${priceSection}
                         </div>
                     `);
                 }
@@ -108,7 +135,7 @@
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const sidebar = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { sidebar.classList.toggle('hidden-menu'); });
+        menuBtn.addEventListener('click', () => { sidebar.classList.toggle('show-menu'); });
     </script>
 </body>
 </html>
