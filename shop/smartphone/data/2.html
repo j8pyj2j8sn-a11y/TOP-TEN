@@ -25,7 +25,7 @@
     <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#0a0a0a]/80 backdrop-blur-lg">
         <button id="menu-btn" class="md:hidden text-white uppercase text-[10px] tracking-widest border border-white/20 px-3 py-1">Menu</button>
         <a href="../../../index.html" class="premium-font text-xl md:text-2xl tracking-[0.2em]">TECH TEN</a>
-        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 10k</h1>
+        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 20k</h1>
         <a href="../../../shop.html" class="text-xs uppercase tracking-[0.2em] border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition duration-300">Back</a>
     </nav>
 
@@ -65,17 +65,77 @@
                 ];
 
                 const phoneData = [
-                    {name:"Samsung Galaxy F16 5G", specs:["6.7-inch FHD+ AMOLED", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+5MP+2MP", "13MP", "5000mAh", "25W", "5G"], pros:["Bright Super AMOLED", "Reliable updates", "Good battery"], cons:["No charger", "Average low-light camera", "25W charging"], about:"Samsung Galaxy F16 5G is one of the best choices in the budget segment for users who value display quality and long-term software support."},
-                    {name:"CMF Phone 2 Pro", specs:["6.77-inch AMOLED", "120Hz", "Dimensity 7300", "6GB/8GB", "128GB", "50MP+8MP", "16MP", "5000mAh", "33W", "5G"], pros:["Powerful performance", "Excellent AMOLED", "Clean software"], cons:["Limited service", "No charger", "Night photography"], about:"The CMF Phone 2 Pro delivers flagship-like performance in the budget segment. The Dimensity 7300 processor easily handles gaming, multitasking, and demanding applications."},
-                    {name:"Redmi 14C 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Good processor", "Long battery", "Smooth 120Hz"], cons:["HD+ resolution", "Slow charging", "Pre-installed apps"], about:"Redmi 14C 5G offers dependable performance with Qualcomm's efficient Snapdragon 4 Gen 2 chipset. The large 120Hz display provides smooth scrolling and enjoyable video playback."},
-                    {name:"Motorola G45 5G", specs:["6.5-inch LCD", "120Hz", "Snapdragon 6s Gen 3", "4GB/8GB", "128GB", "50MP+2MP", "16MP", "5000mAh", "20W", "5G"], pros:["Near-stock Android", "Stereo speakers", "Reliable"], cons:["HD+ display", "Average camera", "Charging speed"], about:"Motorola G45 5G is perfect for users who prefer a clean Android experience without unnecessary software. The Snapdragon processor ensures responsive everyday performance."},
-                    {name:"POCO M7 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Smooth performance", "Great battery", "Large display"], cons:["HD+ resolution", "Slow charging", "Bloatware"], about:"The POCO M7 5G is designed for users looking for dependable everyday performance with modern 5G connectivity. Powered by the Snapdragon 4 Gen 2 processor, it handles multitasking."},
-                    {name:"Vivo T4 Lite 5G", specs:["6.74-inch LCD", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+2MP", "8MP", "6000mAh", "15W", "5G"], pros:["Huge 6000mAh battery", "Good performance", "IP64 rating"], cons:["Slow charging", "HD+ display", "Bloatware"], about:"The Vivo T4 Lite 5G stands out with its massive 6000mAh battery, making it ideal for users who need exceptional battery life. It comfortably lasts up to two days with moderate use."},
-                    {name:"Realme Narzo 80 Lite 5G", specs:["6.67-inch LCD", "120Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP AI", "8MP", "6000mAh", "15W", "5G"], pros:["Excellent battery", "Stereo speakers", "120Hz"], cons:["HD+ resolution", "Slow charging", "Average selfies"], about:"Realme Narzo 80 Lite 5G offers an excellent balance of battery life, smooth performance, and durability. Its large battery easily powers the phone for extended periods."},
-                    {name:"Infinix Note 50X 5G", specs:["6.67-inch FHD+", "120Hz", "Dimensity 7300 U", "6GB/8GB", "128GB", "50MP", "16MP", "5500mAh", "45W", "5G"], pros:["Powerful chipset", "45W charging", "FHD+ display"], cons:["Camera processing", "XOS bloatware", "Limited updates"], about:"The Infinix Note 50X 5G is one of the most powerful smartphones in this segment. It combines a Full HD+ display, fast 45W charging, and the Dimensity 7300 Ultimate processor."},
-                    {name:"Lava Blaze Dragon 5G", specs:["6.74-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP", "8MP", "5000mAh", "18W", "5G"], pros:["Clean Android", "Good performance", "Solid build"], cons:["Average cameras", "HD+ display", "Slow charging"], about:"Lava Blaze Dragon 5G delivers a clean Android experience with no unnecessary software. The Snapdragon 4 Gen 2 chipset ensures reliable daily performance."},
-                    {name:"Tecno Pova 7 5G", specs:["6.78-inch FHD+", "120Hz", "Dimensity 7300 U", "8GB", "256GB", "50MP AI", "16MP", "6000mAh", "45W", "5G"], pros:["Gaming performance", "Big battery/Fast charge", "FHD+ 120Hz"], cons:["Bulky design", "Average camera", "HiOS bloatware"], about:"The Tecno Pova 7 5G is designed for gamers and power users. Its Dimensity 7300 Ultimate processor delivers excellent gaming performance, while the 6000mAh battery ensures extended usage."}
-                ];
+  {
+    name: "OnePlus Nord CE5 5G",
+    specs: ["6.77-inch", "120Hz", "Dimensity 8300", "8GB/12GB", "128GB/256GB", "50MP", "16MP", "7100mAh", "80W", "5G"],
+    pros: ["Vibrant AMOLED", "Powerful chipset", "7100mAh battery"],
+    cons: ["Not specified"],
+    about: "The OnePlus Nord CE5 5G is one of the strongest all-round smartphones under ₹20,000. It combines a vibrant 120Hz AMOLED display, a powerful Dimensity chipset, and a massive 7,100mAh battery for excellent everyday performance."
+  },
+  {
+    name: "Samsung Galaxy F36 5G",
+    specs: ["6.7-inch FHD+ AMOLED", "120Hz", "Exynos 1380", "6GB/8GB", "128GB", "50MP", "13MP", "5000mAh", "Not specified", "5G"],
+    pros: ["Premium display", "Dependable software", "OIS camera"],
+    cons: ["Not specified"],
+    about: "The Samsung Galaxy F36 5G focuses on delivering a premium display and dependable software support. Its Super AMOLED panel provides vivid colors and deep blacks, while the Exynos processor handles daily tasks with ease."
+  },
+  {
+    name: "Nothing CMF Phone 2 Pro",
+    specs: ["6.77-inch FHD+ AMOLED", "120Hz", "Dimensity 7300 Pro", "8GB", "128GB/256GB", "50MP+50MP", "16MP", "5000mAh", "33W", "5G"],
+    pros: ["Unique design", "Clean OS", "Versatile camera"],
+    cons: ["Not specified"],
+    about: "The Nothing CMF Phone 2 Pro stands out with its unique design, clean Nothing OS, and balanced performance. Equipped with a 120Hz AMOLED display and a capable Dimensity processor, it offers smooth multitasking and gaming."
+  },
+  {
+    name: "POCO X7 5G",
+    specs: ["6.67-inch 1.5K AMOLED", "120Hz", "Dimensity 7300 Ultra", "8GB/12GB", "128GB/256GB", "50MP", "20MP", "5500mAh", "45W", "5G"],
+    pros: ["1.5K display", "Fast charging", "Performance"],
+    cons: ["Not specified"],
+    about: "The POCO X7 5G is built for users who prioritize performance and entertainment. Its 1.5K AMOLED display offers sharp visuals, while the Dimensity 7300 Ultra processor handles gaming and demanding apps effortlessly."
+  },
+  {
+    name: "realme P3 Pro 5G",
+    specs: ["6.83-inch FHD+ AMOLED", "120Hz", "Snapdragon 7s Gen 3", "8GB/12GB", "128GB/256GB", "50MP", "16MP", "6000mAh", "80W", "5G"],
+    pros: ["Flagship-like performance", "80W charging", "Large battery"],
+    cons: ["Not specified"],
+    about: "The realme P3 Pro 5G offers flagship-like performance at a mid-range price. Powered by the Snapdragon 7s Gen 3, it delivers smooth gaming and multitasking, a 6,000mAh battery, and 80W charging."
+  },
+  {
+    name: "iQOO Z10 5G",
+    specs: ["6.77-inch", "120Hz", "Snapdragon 7s Gen 3", "8GB/12GB", "128GB/256GB", "50MP", "32MP", "7300mAh", "90W", "5G"],
+    pros: ["Massive 7300mAh battery", "90W charging", "High-res selfie camera"],
+    cons: ["Not specified"],
+    about: "The iQOO Z10 5G is designed for users who demand exceptional battery life and high performance. Featuring a massive 7,300mAh battery and 90W fast charging, it easily lasts more than a day of heavy use."
+  },
+  {
+    name: "Redmi Note 14 5G",
+    specs: ["6.67-inch FHD+ AMOLED", "120Hz", "Dimensity 7025 Ultra", "6GB/8GB", "128GB/256GB", "50MP", "20MP", "5110mAh", "45W", "5G"],
+    pros: ["Bright AMOLED", "Reliable performance", "HyperOS"],
+    cons: ["Not specified"],
+    about: "The Redmi Note 14 5G continues Xiaomi’s tradition of offering impressive value. It features a bright AMOLED display, dependable Dimensity processor, and a 50MP OIS camera for quality photography."
+  },
+  {
+    name: "POCO M7 Pro 5G",
+    specs: ["6.67-inch FHD+ AMOLED", "120Hz", "Dimensity 7025 Ultra", "6GB/8GB", "128GB/256GB", "50MP", "20MP", "5110mAh", "45W", "5G"],
+    pros: ["Smooth experience", "Good camera", "Fast charging"],
+    cons: ["Not specified"],
+    about: "The POCO M7 Pro 5G is a budget-friendly smartphone that doesn’t compromise on essentials. Its AMOLED display provides an enjoyable viewing experience, and the Dimensity chipset delivers reliable everyday performance."
+  },
+  {
+    name: "OnePlus Nord CE4 Lite 5G",
+    specs: ["6.67-inch FHD+ AMOLED", "120Hz", "Snapdragon 695", "8GB", "128GB/256GB", "50MP", "16MP", "5500mAh", "80W", "5G"],
+    pros: ["Clean software", "80W charging", "Vibrant AMOLED"],
+    cons: ["Not specified"],
+    about: "The OnePlus Nord CE4 Lite 5G offers a clean software experience, vibrant AMOLED display, and impressive battery life. The 80W charging and reliable 50MP OIS camera make it a practical choice."
+  },
+  {
+    name: "Redmi Note 13 5G",
+    specs: ["6.67-inch FHD+ AMOLED", "120Hz", "Dimensity 6080", "6GB/8GB/12GB", "128GB/256GB", "108MP", "16MP", "5000mAh", "33W", "5G"],
+    pros: ["108MP camera", "Excellent AMOLED", "Solid performance"],
+    cons: ["Not specified"],
+    about: "The Redmi Note 13 5G remains one of the most popular budget smartphones thanks to its excellent AMOLED display and impressive 108MP camera. It delivers solid everyday performance and good battery life."
+  }
+];
 
                 for(let i = 0; i < phoneData.length; i++) {
                     const p = phoneData[i];
@@ -95,7 +155,7 @@
                         <div class="bg-[#0f0f0f] border border-[#E5E4E2] transition-all duration-300 hover:scale-[1.02] flex flex-col h-auto">
                             <div class="flex flex-col md:flex-row gap-4 p-4">
                                 <div class="w-full md:w-64 flex-shrink-0">
-                                    <img src="../images/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
+                                    <img src="../images/2/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
                                 </div>
                                 <div class="w-full flex flex-col">
                                     <h3 class="text-2xl md:text-3xl uppercase tracking-widest mb-4 text-center">${p.name}</h3>

@@ -25,7 +25,7 @@
     <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#0a0a0a]/80 backdrop-blur-lg">
         <button id="menu-btn" class="md:hidden text-white uppercase text-[10px] tracking-widest border border-white/20 px-3 py-1">Menu</button>
         <a href="../../../index.html" class="premium-font text-xl md:text-2xl tracking-[0.2em]">TECH TEN</a>
-        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 10k</h1>
+        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 30k</h1>
         <a href="../../../shop.html" class="text-xs uppercase tracking-[0.2em] border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition duration-300">Back</a>
     </nav>
 
@@ -64,18 +64,78 @@
                     [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
                 ];
 
-                const phoneData = [
-                    {name:"Samsung Galaxy F16 5G", specs:["6.7-inch FHD+ AMOLED", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+5MP+2MP", "13MP", "5000mAh", "25W", "5G"], pros:["Bright Super AMOLED", "Reliable updates", "Good battery"], cons:["No charger", "Average low-light camera", "25W charging"], about:"Samsung Galaxy F16 5G is one of the best choices in the budget segment for users who value display quality and long-term software support."},
-                    {name:"CMF Phone 2 Pro", specs:["6.77-inch AMOLED", "120Hz", "Dimensity 7300", "6GB/8GB", "128GB", "50MP+8MP", "16MP", "5000mAh", "33W", "5G"], pros:["Powerful performance", "Excellent AMOLED", "Clean software"], cons:["Limited service", "No charger", "Night photography"], about:"The CMF Phone 2 Pro delivers flagship-like performance in the budget segment. The Dimensity 7300 processor easily handles gaming, multitasking, and demanding applications."},
-                    {name:"Redmi 14C 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Good processor", "Long battery", "Smooth 120Hz"], cons:["HD+ resolution", "Slow charging", "Pre-installed apps"], about:"Redmi 14C 5G offers dependable performance with Qualcomm's efficient Snapdragon 4 Gen 2 chipset. The large 120Hz display provides smooth scrolling and enjoyable video playback."},
-                    {name:"Motorola G45 5G", specs:["6.5-inch LCD", "120Hz", "Snapdragon 6s Gen 3", "4GB/8GB", "128GB", "50MP+2MP", "16MP", "5000mAh", "20W", "5G"], pros:["Near-stock Android", "Stereo speakers", "Reliable"], cons:["HD+ display", "Average camera", "Charging speed"], about:"Motorola G45 5G is perfect for users who prefer a clean Android experience without unnecessary software. The Snapdragon processor ensures responsive everyday performance."},
-                    {name:"POCO M7 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Smooth performance", "Great battery", "Large display"], cons:["HD+ resolution", "Slow charging", "Bloatware"], about:"The POCO M7 5G is designed for users looking for dependable everyday performance with modern 5G connectivity. Powered by the Snapdragon 4 Gen 2 processor, it handles multitasking."},
-                    {name:"Vivo T4 Lite 5G", specs:["6.74-inch LCD", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+2MP", "8MP", "6000mAh", "15W", "5G"], pros:["Huge 6000mAh battery", "Good performance", "IP64 rating"], cons:["Slow charging", "HD+ display", "Bloatware"], about:"The Vivo T4 Lite 5G stands out with its massive 6000mAh battery, making it ideal for users who need exceptional battery life. It comfortably lasts up to two days with moderate use."},
-                    {name:"Realme Narzo 80 Lite 5G", specs:["6.67-inch LCD", "120Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP AI", "8MP", "6000mAh", "15W", "5G"], pros:["Excellent battery", "Stereo speakers", "120Hz"], cons:["HD+ resolution", "Slow charging", "Average selfies"], about:"Realme Narzo 80 Lite 5G offers an excellent balance of battery life, smooth performance, and durability. Its large battery easily powers the phone for extended periods."},
-                    {name:"Infinix Note 50X 5G", specs:["6.67-inch FHD+", "120Hz", "Dimensity 7300 U", "6GB/8GB", "128GB", "50MP", "16MP", "5500mAh", "45W", "5G"], pros:["Powerful chipset", "45W charging", "FHD+ display"], cons:["Camera processing", "XOS bloatware", "Limited updates"], about:"The Infinix Note 50X 5G is one of the most powerful smartphones in this segment. It combines a Full HD+ display, fast 45W charging, and the Dimensity 7300 Ultimate processor."},
-                    {name:"Lava Blaze Dragon 5G", specs:["6.74-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP", "8MP", "5000mAh", "18W", "5G"], pros:["Clean Android", "Good performance", "Solid build"], cons:["Average cameras", "HD+ display", "Slow charging"], about:"Lava Blaze Dragon 5G delivers a clean Android experience with no unnecessary software. The Snapdragon 4 Gen 2 chipset ensures reliable daily performance."},
-                    {name:"Tecno Pova 7 5G", specs:["6.78-inch FHD+", "120Hz", "Dimensity 7300 U", "8GB", "256GB", "50MP AI", "16MP", "6000mAh", "45W", "5G"], pros:["Gaming performance", "Big battery/Fast charge", "FHD+ 120Hz"], cons:["Bulky design", "Average camera", "HiOS bloatware"], about:"The Tecno Pova 7 5G is designed for gamers and power users. Its Dimensity 7300 Ultimate processor delivers excellent gaming performance, while the 6000mAh battery ensures extended usage."}
-                ];
+ const phoneData = [
+  {
+    name: "OnePlus Nord 5 5G",
+    specs: ["6.83-inch 1.5K 144Hz AMOLED", "144Hz", "Snapdragon 8s Gen 3", "8GB/12GB", "256GB/512GB", "50MP+8MP", "50MP", "6800mAh", "80W", "5G"],
+    pros: ["Flagship performance", "144Hz display", "Fast charging"],
+    cons: ["Not specified"],
+    about: "The OnePlus Nord 5 5G delivers flagship-level performance at a mid-range price. Its Snapdragon 8s Gen 3 chipset ensures exceptional gaming and multitasking, while the 144Hz AMOLED display offers a smooth viewing experience."
+  },
+  {
+    name: "POCO F7 5G",
+    specs: ["6.83-inch 1.5K AMOLED", "120Hz", "Snapdragon 8s Gen 4", "12GB", "256GB/512GB", "50MP+8MP", "20MP", "7550mAh", "90W", "5G"],
+    pros: ["Top-tier performance", "Massive battery", "Fast charging"],
+    cons: ["Not specified"],
+    about: "The POCO F7 5G is built for enthusiasts seeking top-tier performance. Powered by Snapdragon 8s Gen 4, it excels in gaming and heavy workloads. Its massive battery, bright AMOLED display, and fast charging make it a strong value-for-money flagship killer."
+  },
+  {
+    name: "realme GT 7T",
+    specs: ["6.8-inch AMOLED", "120Hz", "Dimensity 8400 Max", "8GB/12GB", "256GB", "50MP", "32MP", "7000mAh", "120W", "5G"],
+    pros: ["Excellent battery life", "120W charging", "Powerful chipset"],
+    cons: ["Not specified"],
+    about: "The realme GT 7T offers flagship performance with excellent battery life and ultra-fast charging. Its powerful chipset handles demanding games effortlessly, while the vibrant AMOLED display and capable cameras make it a complete entertainment package."
+  },
+  {
+    name: "Motorola Edge 60 Pro",
+    specs: ["6.7-inch 1.5K pOLED", "144Hz", "Dimensity 8350 Extreme", "8GB/12GB", "256GB", "50MP+50MP+10MP", "50MP", "6000mAh", "90W", "5G"],
+    pros: ["Clean Android experience", "Premium pOLED display", "Versatile cameras"],
+    cons: ["Not specified"],
+    about: "The Motorola Edge 60 Pro combines premium hardware with a clean Android experience. Its pOLED display is among the best in the segment, while the versatile triple-camera setup and smooth software make it ideal for photography enthusiasts."
+  },
+  {
+    name: "iQOO Neo 10R",
+    specs: ["6.78-inch 1.5K AMOLED", "144Hz", "Snapdragon 8s Gen 3", "8GB/12GB", "256GB", "50MP", "32MP", "6400mAh", "80W", "5G"],
+    pros: ["Great for gaming", "144Hz display", "Fast charging"],
+    cons: ["Not specified"],
+    about: "The iQOO Neo 10R is designed for gamers and power users. It combines flagship-level processing power with a fast 144Hz display, excellent cooling, and long battery life, making it one of the fastest phones under ₹30,000."
+  },
+  {
+    name: "Nothing Phone (3a) Pro",
+    specs: ["6.77-inch AMOLED", "120Hz", "Snapdragon 7s Gen 3", "8GB/12GB", "256GB", "50MP+50MP+8MP", "50MP", "5000mAh", "50W", "5G"],
+    pros: ["Unique design", "Clean OS", "Premium camera system"],
+    cons: ["Not specified"],
+    about: "The Nothing Phone (3a) Pro offers a unique transparent design, smooth Nothing OS, and one of the best camera systems in its class. It provides a premium software experience with reliable performance and long software support."
+  },
+  {
+    name: "Samsung Galaxy A56 5G",
+    specs: ["6.7-inch Super AMOLED", "120Hz", "Exynos 1580", "8GB", "128GB/256GB", "50MP+12MP+5MP", "12MP", "5000mAh", "45W", "5G"],
+    pros: ["Reliable software", "Premium build", "Vibrant display"],
+    cons: ["Not specified"],
+    about: "The Galaxy A56 5G focuses on reliability, premium build quality, and long-term software updates. Its Super AMOLED display is vibrant, the cameras perform consistently, and Samsung's software ecosystem adds significant value."
+  },
+  {
+    name: "Redmi Note 14 Pro+ 5G",
+    specs: ["6.67-inch Curved 1.5K AMOLED", "120Hz", "Snapdragon 7s Gen 3", "8GB/12GB", "256GB", "50MP", "20MP", "6200mAh", "90W", "5G"],
+    pros: ["Curved AMOLED display", "90W charging", "Long battery life"],
+    cons: ["Not specified"],
+    about: "The Redmi Note 14 Pro+ 5G combines a premium curved display with excellent cameras and long battery life. Its fast charging and dependable performance make it an attractive choice for multimedia users."
+  },
+  {
+    name: "vivo T4 Ultra",
+    specs: ["6.67-inch 1.5K AMOLED", "120Hz", "Dimensity 9300+", "8GB/12GB", "256GB", "50MP+50MP+8MP", "32MP", "5500mAh", "90W", "5G"],
+    pros: ["Flagship camera", "Powerful processor", "Premium design"],
+    cons: ["Not specified"],
+    about: "The vivo T4 Ultra stands out with its flagship-grade camera hardware and powerful processor. It excels in photography, gaming, and media consumption while maintaining a sleek premium design."
+  },
+  {
+    name: "OPPO Reno14 5G",
+    specs: ["6.59-inch AMOLED", "120Hz", "Dimensity 8350", "8GB/12GB", "256GB", "50MP", "50MP", "6000mAh", "80W", "5G"],
+    pros: ["Stylish design", "Excellent camera", "Fast charging"],
+    cons: ["Not specified"],
+    about: "The OPPO Reno14 5G offers a balanced flagship experience with stylish design, excellent cameras, vibrant AMOLED display, and fast charging. It is especially suited for users who prioritize photography and premium aesthetics."
+  }
+];
 
                 for(let i = 0; i < phoneData.length; i++) {
                     const p = phoneData[i];
@@ -95,7 +155,7 @@
                         <div class="bg-[#0f0f0f] border border-[#E5E4E2] transition-all duration-300 hover:scale-[1.02] flex flex-col h-auto">
                             <div class="flex flex-col md:flex-row gap-4 p-4">
                                 <div class="w-full md:w-64 flex-shrink-0">
-                                    <img src="../images/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
+                                    <img src="../images/3/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
                                 </div>
                                 <div class="w-full flex flex-col">
                                     <h3 class="text-2xl md:text-3xl uppercase tracking-widest mb-4 text-center">${p.name}</h3>

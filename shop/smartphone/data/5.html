@@ -24,8 +24,8 @@
     <!-- Top Bar -->
     <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#0a0a0a]/80 backdrop-blur-lg">
         <button id="menu-btn" class="md:hidden text-white uppercase text-[10px] tracking-widest border border-white/20 px-3 py-1">Menu</button>
-        <a href="../../../index.html" class="premium-font text-xl md:text-2xl tracking-[0.2em]">TECH TEN</a>
-        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 10k</h1>
+        <a href="../../../index.html" class="premium-font text-xl md:text-2xl tracking-[0.2em]">THE LOCAL PRODUCT</a>
+        <h1 class="premium-font text-sm md:text-xl tracking-[0.1em] uppercase hidden sm:block">Top ten under 50k</h1>
         <a href="../../../shop.html" class="text-xs uppercase tracking-[0.2em] border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition duration-300">Back</a>
     </nav>
 
@@ -64,18 +64,78 @@
                     [{name:"AMZ", url:"#"}, {name:"FLK", url:"#"}, {name:"OFF", url:"#"}, {name:"LNK4", url:"#"}, {name:"LNK5", url:"#"}],
                 ];
 
-                const phoneData = [
-                    {name:"Samsung Galaxy F16 5G", specs:["6.7-inch FHD+ AMOLED", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+5MP+2MP", "13MP", "5000mAh", "25W", "5G"], pros:["Bright Super AMOLED", "Reliable updates", "Good battery"], cons:["No charger", "Average low-light camera", "25W charging"], about:"Samsung Galaxy F16 5G is one of the best choices in the budget segment for users who value display quality and long-term software support."},
-                    {name:"CMF Phone 2 Pro", specs:["6.77-inch AMOLED", "120Hz", "Dimensity 7300", "6GB/8GB", "128GB", "50MP+8MP", "16MP", "5000mAh", "33W", "5G"], pros:["Powerful performance", "Excellent AMOLED", "Clean software"], cons:["Limited service", "No charger", "Night photography"], about:"The CMF Phone 2 Pro delivers flagship-like performance in the budget segment. The Dimensity 7300 processor easily handles gaming, multitasking, and demanding applications."},
-                    {name:"Redmi 14C 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Good processor", "Long battery", "Smooth 120Hz"], cons:["HD+ resolution", "Slow charging", "Pre-installed apps"], about:"Redmi 14C 5G offers dependable performance with Qualcomm's efficient Snapdragon 4 Gen 2 chipset. The large 120Hz display provides smooth scrolling and enjoyable video playback."},
-                    {name:"Motorola G45 5G", specs:["6.5-inch LCD", "120Hz", "Snapdragon 6s Gen 3", "4GB/8GB", "128GB", "50MP+2MP", "16MP", "5000mAh", "20W", "5G"], pros:["Near-stock Android", "Stereo speakers", "Reliable"], cons:["HD+ display", "Average camera", "Charging speed"], about:"Motorola G45 5G is perfect for users who prefer a clean Android experience without unnecessary software. The Snapdragon processor ensures responsive everyday performance."},
-                    {name:"POCO M7 5G", specs:["6.88-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "6GB", "128GB", "50MP AI", "8MP", "5160mAh", "18W", "5G"], pros:["Smooth performance", "Great battery", "Large display"], cons:["HD+ resolution", "Slow charging", "Bloatware"], about:"The POCO M7 5G is designed for users looking for dependable everyday performance with modern 5G connectivity. Powered by the Snapdragon 4 Gen 2 processor, it handles multitasking."},
-                    {name:"Vivo T4 Lite 5G", specs:["6.74-inch LCD", "90Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP+2MP", "8MP", "6000mAh", "15W", "5G"], pros:["Huge 6000mAh battery", "Good performance", "IP64 rating"], cons:["Slow charging", "HD+ display", "Bloatware"], about:"The Vivo T4 Lite 5G stands out with its massive 6000mAh battery, making it ideal for users who need exceptional battery life. It comfortably lasts up to two days with moderate use."},
-                    {name:"Realme Narzo 80 Lite 5G", specs:["6.67-inch LCD", "120Hz", "Dimensity 6300", "4GB/6GB", "128GB", "50MP AI", "8MP", "6000mAh", "15W", "5G"], pros:["Excellent battery", "Stereo speakers", "120Hz"], cons:["HD+ resolution", "Slow charging", "Average selfies"], about:"Realme Narzo 80 Lite 5G offers an excellent balance of battery life, smooth performance, and durability. Its large battery easily powers the phone for extended periods."},
-                    {name:"Infinix Note 50X 5G", specs:["6.67-inch FHD+", "120Hz", "Dimensity 7300 U", "6GB/8GB", "128GB", "50MP", "16MP", "5500mAh", "45W", "5G"], pros:["Powerful chipset", "45W charging", "FHD+ display"], cons:["Camera processing", "XOS bloatware", "Limited updates"], about:"The Infinix Note 50X 5G is one of the most powerful smartphones in this segment. It combines a Full HD+ display, fast 45W charging, and the Dimensity 7300 Ultimate processor."},
-                    {name:"Lava Blaze Dragon 5G", specs:["6.74-inch LCD", "120Hz", "Snapdragon 4 Gen 2", "4GB/6GB", "128GB", "50MP", "8MP", "5000mAh", "18W", "5G"], pros:["Clean Android", "Good performance", "Solid build"], cons:["Average cameras", "HD+ display", "Slow charging"], about:"Lava Blaze Dragon 5G delivers a clean Android experience with no unnecessary software. The Snapdragon 4 Gen 2 chipset ensures reliable daily performance."},
-                    {name:"Tecno Pova 7 5G", specs:["6.78-inch FHD+", "120Hz", "Dimensity 7300 U", "8GB", "256GB", "50MP AI", "16MP", "6000mAh", "45W", "5G"], pros:["Gaming performance", "Big battery/Fast charge", "FHD+ 120Hz"], cons:["Bulky design", "Average camera", "HiOS bloatware"], about:"The Tecno Pova 7 5G is designed for gamers and power users. Its Dimensity 7300 Ultimate processor delivers excellent gaming performance, while the 6000mAh battery ensures extended usage."}
-                ];
+  const phoneData = [
+  {
+    name: "OnePlus 13R",
+    specs: ["6.78-inch 1.5K LTPO AMOLED", "120Hz", "Snapdragon 8 Gen 3", "12GB/16GB", "256GB/512GB", "50MP+50MP+8MP", "16MP", "6000mAh", "80W", "5G"],
+    pros: ["Snapdragon 8 Gen 3 performance", "Excellent battery life", "Smooth OxygenOS"],
+    cons: ["No wireless charging", "Average ultra-wide camera", "No official IP68 rating"],
+    about: "The OnePlus 13R is one of the best flagship killers under ₹50,000. It delivers flagship-grade performance, excellent battery life, a premium LTPO AMOLED display, and a clean OxygenOS experience."
+  },
+  {
+    name: "iQOO 13",
+    specs: ["6.82-inch 2K LTPO AMOLED", "144Hz", "Snapdragon 8 Elite", "12GB/16GB", "256GB/512GB", "50MP Triple OIS", "32MP", "6150mAh", "120W", "5G"],
+    pros: ["Snapdragon 8 Elite", "2K AMOLED display", "Fast charging"],
+    cons: ["Funtouch OS has bloatware", "No telephoto lens", "Camera colors can be oversaturated"],
+    about: "The iQOO 13 is built for enthusiasts who want flagship performance. It excels in gaming, multitasking, and display quality while offering one of the fastest charging systems in its class."
+  },
+  {
+    name: "Xiaomi 15",
+    specs: ["6.36-inch LTPO AMOLED", "120Hz", "Snapdragon 8 Elite", "12GB/16GB", "256GB/512GB", "Leica 50MP Triple", "32MP", "5400mAh", "90W", "5G"],
+    pros: ["Compact flagship", "Leica cameras", "Excellent display"],
+    cons: ["HyperOS includes ads/apps", "No expandable storage", "Charging slower than rivals"],
+    about: "The Xiaomi 15 is a compact flagship featuring Leica cameras, premium build quality, and outstanding performance. It's ideal for users seeking flagship features in a smaller form factor."
+  },
+  {
+    name: "Google Pixel 10",
+    specs: ["6.3-inch OLED", "120Hz", "Tensor G5", "12GB", "128GB/256GB", "50MP + 48MP", "42MP", "5000mAh", "45W", "5G"],
+    pros: ["Best camera software", "Excellent AI features", "Clean Android"],
+    cons: ["Slower charging", "Gaming behind Snapdragon rivals", "Limited service centers"],
+    about: "The Pixel 10 delivers Google's best AI experience along with industry-leading computational photography. It is perfect for photography lovers and users who prefer clean Android with long software support."
+  },
+  {
+    name: "Samsung Galaxy S25",
+    specs: ["6.2-inch Dynamic AMOLED 2X", "120Hz LTPO", "Snapdragon 8 Elite", "12GB", "256GB/512GB", "50MP Triple Cameras", "12MP", "4000mAh", "45W", "5G"],
+    pros: ["Outstanding display", "Seven years of updates", "Excellent cameras"],
+    cons: ["Small battery", "Slow charging compared to rivals", "Charger not included"],
+    about: "The Galaxy S25 is Samsung's premium compact flagship featuring one of the best displays, dependable cameras, excellent build quality, and seven years of software support."
+  },
+  {
+    name: "vivo X200",
+    specs: ["6.67-inch LTPO AMOLED", "120Hz", "Dimensity 9400", "12GB/16GB", "256GB/512GB", "ZEISS 50MP Triple", "32MP", "5800mAh", "90W", "5G"],
+    pros: ["ZEISS cameras", "Powerful Dimensity 9400", "Excellent display"],
+    cons: ["Funtouch OS", "No expandable storage", "Accessories sold separately"],
+    about: "The vivo X200 is a camera-focused flagship with ZEISS optics, premium design, and excellent battery life. It also delivers flagship-grade gaming and multimedia performance."
+  },
+  {
+    name: "OPPO Find X8",
+    specs: ["6.59-inch LTPO AMOLED", "120Hz", "Dimensity 9400", "12GB/16GB", "256GB/512GB", "Hasselblad 50MP Triple", "32MP", "5630mAh", "80W", "5G"],
+    pros: ["Hasselblad cameras", "Premium build", "Excellent battery"],
+    cons: ["ColorOS has bloatware", "No microSD slot", "Limited availability"],
+    about: "The OPPO Find X8 balances flagship cameras, premium design, and excellent battery life. It offers a refined software experience with impressive photography capabilities."
+  },
+  {
+    name: "HONOR Magic7",
+    specs: ["6.78-inch LTPO OLED", "120Hz", "Snapdragon 8 Elite", "12GB/16GB", "256GB/512GB", "50MP Triple Cameras", "50MP", "5650mAh", "100W", "5G"],
+    pros: ["Premium display", "Fast charging", "Strong performance"],
+    cons: ["Limited service network", "MagicOS needs refinement", "Fewer accessories"],
+    about: "The HONOR Magic7 combines premium hardware with AI-powered features and outstanding battery life. It is ideal for users looking for a flagship alternative with excellent display quality."
+  },
+  {
+    name: "Motorola Edge 60 Ultra",
+    specs: ["6.8-inch pOLED", "144Hz", "Snapdragon 8 Elite", "12GB/16GB", "256GB/512GB", "50MP Triple Cameras", "60MP", "5000mAh", "125W", "5G"],
+    pros: ["Clean Android", "Excellent display", "125W charging"],
+    cons: ["Slower software updates", "Camera consistency", "Smaller ecosystem"],
+    about: "The Motorola Edge 60 Ultra delivers flagship hardware with a near-stock Android experience. Its 144Hz pOLED display and ultra-fast charging make it an excellent multimedia device."
+  },
+  {
+    name: "OnePlus 13s",
+    specs: ["6.32-inch LTPO AMOLED", "120Hz", "Snapdragon 8 Elite", "12GB", "256GB/512GB", "50MP Dual OIS", "32MP", "6260mAh", "80W", "5G"],
+    pros: ["Snapdragon 8 Elite", "Excellent battery", "Premium compact design"],
+    cons: ["No wireless charging", "No ultra-wide camera", "Compact size not for everyone"],
+    about: "The OnePlus 13s is a compact flagship that offers outstanding performance, long battery life, and a smooth OxygenOS experience. It is perfect for users who prefer a smaller premium smartphone without sacrificing power."
+  }
+];
 
                 for(let i = 0; i < phoneData.length; i++) {
                     const p = phoneData[i];
@@ -95,7 +155,7 @@
                         <div class="bg-[#0f0f0f] border border-[#E5E4E2] transition-all duration-300 hover:scale-[1.02] flex flex-col h-auto">
                             <div class="flex flex-col md:flex-row gap-4 p-4">
                                 <div class="w-full md:w-64 flex-shrink-0">
-                                    <img src="../images/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
+                                    <img src="../images/5/${i+1}.jpg" class="aspect-square w-full object-cover border-2 border-[#E5E4E2]" alt="${p.name}">
                                 </div>
                                 <div class="w-full flex flex-col">
                                     <h3 class="text-2xl md:text-3xl uppercase tracking-widest mb-4 text-center">${p.name}</h3>
