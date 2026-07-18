@@ -12,6 +12,7 @@
         h1, h2 { font-family: 'Playfair Display', serif; }
         .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #222222; transition: color 0.3s; cursor: pointer; }
         .nav-link:hover { color: #000000; }
+        [x-cloak] { display: none !important; }
     </style>
 </head>
 <body>
@@ -22,85 +23,55 @@
             <h1 class="text-5xl md:text-7xl font-normal tracking-tight leading-[0.8] text-black">LOCAL PRODUCT</h1>
         </div>
         
-        <!-- Added relative and z-20 to the nav tag -->
-<nav class="relative z-20 flex gap-12 border-b border-gray-200 w-full justify-center pb-8 items-center">
-    <a href="partner/partner.html" class="nav-link">Stores</a>
+        <nav class="relative z-20 flex gap-12 border-b border-gray-200 w-full justify-center pb-8 items-center">
+            <a href="partner/partner.html" class="nav-link">Stores</a>
+            
+            <!-- Category Dropdown -->
+            <div class="relative w-36 z-[9999]"
+                 x-data="{ open: false }"
+                 @click.outside="open = false">
+
+             <button 
+    type="button" 
+    @click="open = !open" 
+    class="nav-link flex items-center gap-2">
     
-    <style>
-    [x-cloak] {
-        display: none !important;
-    }
-</style>
-
-<div class="relative w-36 z-[9999]"
-     x-data="{ open: false }"
-     @click.outside="open = false">
-
-    <button
-        type="button"
-        @click="open = !open"
-        class="nav-link flex items-center justify-center gap-2 w-full">
-
-        <img src="https://flagicons.lipis.dev/flags/4x3/in.svg"
-             class="w-4 h-3 object-cover"
-             alt="India">
-
-        <span>India</span>
-
-        <svg class="w-3 h-3 transition-transform"
-             :class="{'rotate-180': open}"
-             fill="none"
-             stroke="currentColor"
-             viewBox="0 0 24 24">
-            <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"/>
-        </svg>
-    </button>
-
-    <div
-        x-cloak
-        x-show="open"
-        x-transition.origin.top
-        class="absolute left-0 top-full mt-2 w-44 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[99999]">
-
-        <a href="index.html"
-           class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">
-            <img src="https://flagicons.lipis.dev/flags/4x3/in.svg" class="w-4 h-3">
-            India
-        </a>
-
-        <a href="region/uk.html"
-           class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">
-            <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" class="w-4 h-3">
-            UK
-        </a>
-
-        <a href="region/dubai.html"
-           class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">
-            <img src="https://flagicons.lipis.dev/flags/4x3/ae.svg" class="w-4 h-3">
-            Dubai
-        </a>
-
-        <a href="region/saudi.html"
-           class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">
-            <img src="https://flagicons.lipis.dev/flags/4x3/sa.svg" class="w-4 h-3">
-            Saudi Arabia
-        </a>
-
-        <a href="region/qatar.html"
-           class="flex items-center gap-2 px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">
-            <img src="https://flagicons.lipis.dev/flags/4x3/qa.svg" class="w-4 h-3">
-            Qatar
-        </a>
-
-    </div>
-</div>
+    <!-- India Flag Icon -->
+    <img src="https://flagicons.lipis.dev/flags/4x3/in.svg" 
+         class="w-4 h-3 object-cover" 
+         alt="India">
+         
+    <span>india</span>
     
-    <a href="deal.html" class="nav-link">Deal of Today</a>
-    <a href="about.html" class="nav-link">About</a>
-</nav>
+    <!-- Your SVG arrow icon -->
+    <svg class="w-3 h-3 transition-transform"
+         :class="{'rotate-180': open}"
+         fill="none"
+         stroke="currentColor"
+         viewBox="0 0 24 24">
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"/>
+    </svg>
+</button>
+                <div
+                    x-cloak
+                    x-show="open"
+                    x-transition.origin.top
+                    class="absolute left-0 top-full mt-2 w-44 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[99999]">
+
+                    <a href="index.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">india</a>
+                    <a href="region/dubai.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">dubai</a>
+                    <a href="region/uk.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">united kingdom</a>
+                    <a href="region/saudi.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">saudi arabia</a>
+                    <a href="region/qatar.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">qatar</a>
+                </div>
+            </div>
+            
+            <a href="deal.html" class="nav-link">deal</a>
+            <a href="about.html" class="nav-link">About</a>
+        </nav>
     </header>
 
     <!-- Main Content -->

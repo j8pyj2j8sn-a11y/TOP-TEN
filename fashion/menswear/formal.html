@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LOCAL PRODUCT | Collections</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+   <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap');
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100vw;
-            background-color: #ffffff;
-        }
-        
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; width: 100vw; background-color: #ffffff; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        .nav-link { 
-            font-size: 0.70rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: #4a4a4a;
-            transition: color 0.3s; 
-        }
+        .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #4a4a4a; transition: color 0.3s; }
         .nav-link:hover { color: #000000; }
-        
-        #sidebar { 
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-anim { animation: fadeIn 1.5s ease-out forwards; }
+        .slide-up-anim { animation: slideUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
@@ -156,18 +144,19 @@ document.querySelectorAll(".accordion").forEach(button => {
      <!-- Hero Section -->
     <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center fade-in-anim" 
-             style="background-image: url('accessories/background.jpg');"></div>
+             style="background-image: url('formal/background.jpg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <!-- Gradient Blend -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#1a1a1c] to-transparent"></div>
+        
         <div class="relative text-center text-white p-6 fade-in-anim">
-            <h2 class="text-4xl md:text-6xl font-serif italic">"Style: A silent confession of who you are."</h2>
+            <h2 class="text-4xl md:text-6xl font-serif italic">""Style is a way to say who you are without having to speak." — Rachel Zoe"</h2>
         </div>
     </section>
 
-     <!-- Main Content -->
+
     <main class="w-full bg-[#1a1a1c] min-h-screen p-8 md:p-16">
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Cards injected here -->
-        </div>
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
     </main>
 
     <script>
@@ -175,23 +164,41 @@ document.querySelectorAll(".accordion").forEach(button => {
         const sidebar = document.getElementById('sidebar');
         const grid = document.getElementById('product-grid');
 
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
-        });
+        menuBtn.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
 
         // ADD OR EDIT YOUR PRODUCTS BELOW
         const products = [
-             { name: "Product Name #", link: "URL_HERE", image: "1.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "2.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            
+            { name: "Snitch Men Sky Blue Textured Full Sleeves Slim Semi-Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fsnitch-men-sky-blue-textured-full-sleeves-slim-semi-formal-shirt%2Fp%2F27209545", image: "22.jpg" },
+            { name: "Van Heusen White Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fvan-heusen-white-shirt%2Fp%2F9797634", image: "61.jpg" },
+            { name: "Arrow NewYork Men's Vertical Striped Manhattan Slim Fit Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Farrow-newyork-men-s-vertical-striped-manhattan-slim-fit-shirt%2Fp%2F27570224%3FskuId%3D27569396", image: "20.jpg" },
+            { name: "Maroon Slim Fit Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901836106-maroon-slim-fit-formal-shirt", image: "10.jpg" },
+            { name: "Louis Philippe Men Navy Blue Regular Fit Self Design Full Sleeves Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Flouis-philippe-men-navy-blue-regular-fit-self-design-full-sleeves-shirt%2Fp%2F19323448", image: "27.jpg" },
+            { name: "Van Heusen Men Black Regular Fit Stripe Full Sleeves Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fvan-heusen-men-black-regular-fit-stripe-full-sleeves-formal-shirt%2Fp%2F18058730", image: "25.jpg" },
+            { name: "Louis Philippe Men Navy Blue Print Full Sleeves Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Flouis-philippe-men-navy-blue-print-full-sleeves-formal-shirt%2Fp%2F24308294", image: "24.jpg" },
+            { name: "Arrow Grey Manhattan Slim Fit Checked Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Farrow-grey-manhattan-slim-fit-checked-shirt%2Fp%2F17829020", image: "19.jpg" },
+            { name: "Formal Shirts Collection", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fmen%2Ftopwear%2Fformal-shirts%2Fc%2F6828%3Froot%3Dnav_3%26ptype%3Dlisting%252Cmen%252Ctopwear%252Cformal-shirts%252C7%252Cformal-shirts%26p%3D6", image: "23.jpg" },
+            { name: "Louis Philippe Men Blue Slim Fit Solid Full Sleeves Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Flouis-philippe-men-blue-slim-fit-solid-full-sleeves-formal-shirt%2Fp%2F27193474", image: "26.jpg" },
+            { name: "Regular Fit Cotton Rich Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.marksandspencer.in%2Fregular-fit-cotton-rich-shirt%2Fp%2FP61214251.html", image: "12.jpg" },
+            { name: "Arrow Manhattan Slim Fit Oxford Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Farrow-manhattan-slim-fit-oxford-shirt%2Fp%2F19077713", image: "17.jpg" },
+            { name: "U.S. Polo Assn. Men's Tartan Checked Tailored Fit Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fu-s-polo-assn-men-s-tartan-checked-tailored-fit-shirt%2Fp%2F25525586", image: "16.jpg" },
+            { name: "Slim Fit Non-Iron Pure Cotton Printed Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.marksandspencer.in%2Fslim-fit-non-iron-pure-cotton-printed-shirt%2Fp%2FP60631000.html", image: "14.jpg" },
+            { name: "Cotton Twill Slim Fit Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902484704-cotton-twill-slim-fit-formal-shirt", image: "6.jpg" },
+            { name: "Dark Green Slim Fit Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902460201-dark-green-slim-fit-formal-shirt%3FvsFromReqId%3D019f763be172f799a9d0a2440583ea%26vsFromPid%3D10226559385883%26vsFromPos%3D18", image: "7.jpg" },
+            { name: "Louis Philippe Men Purple Slim Fit Textured Full Sleeves Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Flouis-philippe-men-purple-slim-fit-textured-full-sleeves-formal-shirt%2Fp%2F16611347", image: "18.jpg" },
+            { name: "White Slim Fit Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901828104-white-slim-fit-formal-shirt", image: "1.jpg" },
+            { name: "Olive Slim Fit Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901836105-olive-slim-fit-formal-shirt", image: "11.jpg" },
+            { name: "Rare Rabbit Men Pink Cotton Blend Collar Neck Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Frare-rabbit-men-pink-cotton-blend-collar-neck-shirt%2Fp%2F25897771", image: "21.jpg" },
+            { name: "Light Green Formal Full Sleeves Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902619902-light-green-formal-full-sleeves-shirt%3FvsFromReqId%3D019f763fca96352265c12c6a2e6164%26vsFromPid%3D10283663851803%26vsFromPos%3D28", image: "9.jpg" },
+            { name: "Light Blue Dobby Cotton Slim Fit Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901333003-light-blue-dobby-cotton-slim-fit-shirt", image: "2.jpg" },
+            { name: "Men's Navy Blue Cotton Dobby Slim Fit Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901472801-mens-navy-blue-cotton-dobby-slim-fit-shirt%3FvsFromReqId%3D019f76318588f799a9d0a2440559e8%26vsFromPid%3D10242128707867%26vsFromPos%3D6", image: "3.jpg" },
+            { name: "Dark Navy Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901333502-dark-navy%3FvsFromReqId%3D019f7634fe21352265c12c6a2e3280%26vsFromPid%3D9863695008027%26vsFromPos%3D1", image: "4.jpg" },
+            { name: "2 Pack Regular Fit Classic Collar Shirts", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.marksandspencer.in%2F2-pack-regular-fit-classic-collar-shirts%2Fp%2FP60779674.html", image: "13.jpg" },
+            { name: "Regular Fit Easy Iron Cotton Blend Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.marksandspencer.in%2Fregular-fit-easy-iron-cotton-blend-shirt%2Fp%2FP60493980.html", image: "15.jpg" },
+            { name: "Cotton Twill Slim Fit Formal Shirt (Wine)", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902484706-cotton-twill-slim-fit-formal-shirt-wine", image: "5.jpg" },
+            { name: "Dark Brown Slim Fit Formal Shirt", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901828103-dark-brown-slim-fit-formal-shirt", image: "8.jpg" },
+
+
+
             // Add more objects like: { name: "Name", link: "Link", image: "3.jpg" },
         ];
 
@@ -200,7 +207,7 @@ document.querySelectorAll(".accordion").forEach(button => {
             card.className = 'group flex flex-col h-full border-2 border-slate-300 p-2';
             card.innerHTML = `
                 <div class="aspect-[3/4] bg-gray-800 overflow-hidden mb-4">
-                    <img src="accessories/images/${product.image}" 
+                    <img src="formal/images/${product.image}" 
                          alt="${product.name}" 
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
@@ -210,7 +217,7 @@ document.querySelectorAll(".accordion").forEach(button => {
                 <a href="${product.link}" 
                    target="_blank"
                    class="block w-full py-3 text-center border border-white text-white text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300">
-                   Purchase
+                   ckeck the price
                 </a>
             `;
             grid.appendChild(card);

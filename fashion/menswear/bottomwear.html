@@ -5,31 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LOCAL PRODUCT | Collections</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LOCAL PRODUCT | Collections</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap');
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100vw;
-            background-color: #ffffff;
-        }
-        
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; width: 100vw; background-color: #ffffff; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        .nav-link { 
-            font-size: 0.70rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: #4a4a4a;
-            transition: color 0.3s; 
-        }
+        .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #4a4a4a; transition: color 0.3s; }
         .nav-link:hover { color: #000000; }
-        
-        #sidebar { 
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-anim { animation: fadeIn 2.5s ease-out forwards; }
+        .slide-up-anim { animation: slideUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
@@ -79,11 +72,11 @@
                     <span>+</span>
                 </button>
                 <ul class="submenu hidden pl-6 mt-4 text-[11px] uppercase tracking-[0.12em] text-gray-500 space-y-3">
-                    <li><a href="fashion/womenswear/stylish.html" class="hover:text-white transition">BE STYLISH</a></li>
-                    <li><a href="fashion/womenswear/casual.html" class="hover:text-white transition">BE CASUAL</a></li>
-                    <li><a href="fashion/womenswear/elegant.html" class="hover:text-white transition">BE ELEGANT</a></li>
-                    <li><a href="fashion/womenswear/bottomwear.html" class="hover:text-white transition">BOTTOMWEAR</a></li>
-                    <li><a href="fashion/womenswear/active.html" class="hover:text-white transition">BE ACTIVE</a></li>
+                    <li><a href="../womenswear/stylish.html" class="hover:text-white transition">BE STYLISH</a></li>
+                    <li><a href="../womenswear/casual.html" class="hover:text-white transition">BE CASUAL</a></li>
+                    <li><a href="../womenswear/elegant.html" class="hover:text-white transition">BE ELEGANT</a></li>
+                    <li><a href="../womenswear/bottomwear.html" class="hover:text-white transition">BOTTOMWEAR</a></li>
+                    <li><a href="../womenswear/active.html" class="hover:text-white transition">BE ACTIVE</a></li>
                 </ul>
             </li>
 
@@ -94,11 +87,11 @@
                     <span>+</span>
                 </button>
                 <ul class="submenu hidden pl-6 mt-4 text-[11px] uppercase tracking-[0.12em] text-gray-500 space-y-3">
-                    <li><a href="fashion/footwear/casual.html" class="hover:text-white transition">BE CASUAL</a></li>
-                    <li><a href="fashion/footwear/formal.html" class="hover:text-white transition">BE FORMAL</a></li>
-                    <li><a href="fashion/footwear/active.html" class="hover:text-white transition">BE ACTIVE</a></li>
-                    <li><a href="fashion/footwear/slippers.html" class="hover:text-white transition">SLIPPERS</a></li>
-                    <li><a href="fashion/footwear/sandals.html" class="hover:text-white transition">SANDALS</a></li>
+                    <li><a href="../footwear/casual.html" class="hover:text-white transition">BE CASUAL</a></li>
+                    <li><a href="../footwear/formal.html" class="hover:text-white transition">BE FORMAL</a></li>
+                    <li><a href="../footwear/active.html" class="hover:text-white transition">BE ACTIVE</a></li>
+                    <li><a href="../footwear/slippers.html" class="hover:text-white transition">SLIPPERS</a></li>
+                    <li><a href="../footwear/sandals.html" class="hover:text-white transition">SANDALS</a></li>
                 </ul>
             </li>
 
@@ -109,9 +102,9 @@
                     <span>+</span>
                 </button>
                 <ul class="submenu hidden pl-6 mt-4 text-[11px] uppercase tracking-[0.12em] text-gray-500 space-y-3">
-                    <li><a href="fashion/essentials/carry.html" class="hover:text-white transition">CARRY</a></li>
-                    <li><a href="fashion/essentials/timepieces.html" class="hover:text-white transition">TIMEPIECES</a></li>
-                    <li><a href="fashion/essentials/musthaves.html" class="hover:text-white transition">MUST HAVES</a></li>
+                    <li><a href="../essentials/carry.html" class="hover:text-white transition">CARRY</a></li>
+                    <li><a href="../essentials/timepieces.html" class="hover:text-white transition">TIMEPIECES</a></li>
+                    <li><a href="../essentials/musthaves.html" class="hover:text-white transition">MUST HAVES</a></li>
                 </ul>
             </li>
 
@@ -126,7 +119,6 @@
                     <li><a href="../fragrances/her.html" class="hover:text-white transition">FOR HER</a></li>
                 </ul>
             </li>
-
         </ul>
     </div>
 </div>
