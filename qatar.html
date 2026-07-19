@@ -23,65 +23,42 @@
             <h1 class="text-5xl md:text-7xl font-normal tracking-tight leading-[0.8] text-black">LOCAL PRODUCT</h1>
         </div>
         
-        <nav class="relative z-20 flex gap-12 border-b border-gray-200 w-full justify-center pb-8 items-center">
-            <a href="../partner/partner.html" class="nav-link">Stores</a>
+        <!-- Navigation with Region Dropdown -->
+        <nav x-data="{ open: false }" class="relative z-20 flex gap-12 border-b border-gray-200 w-full justify-center pb-8 items-center">
+            <a href="partner/partner.html" class="nav-link">Stores</a>
+            <a href="deal.html" class="nav-link">deal</a>
             
-            <!-- Category Dropdown -->
-            <div class="relative w-36 z-[9999]"
-                 x-data="{ open: false }"
-                 @click.outside="open = false">
-
-                <button 
-    type="button" 
-    @click="open = !open" 
-    class="nav-link flex items-center gap-2">
-    
-    <!-- Qatar Flag Icon -->
-    <img src="https://flagicons.lipis.dev/flags/4x3/qa.svg" 
-         class="w-4 h-3 object-cover" 
-         alt="Qatar">
-         
-    <span>qatar</span>
-    
-    <!-- Your SVG arrow icon -->
-    <svg class="w-3 h-3 transition-transform"
-         :class="{'rotate-180': open}"
-         fill="none"
-         stroke="currentColor"
-         viewBox="0 0 24 24">
-        <path stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"/>
-    </svg>
-</button>
-
+            <!-- Region Dropdown -->
+            <div class="relative">
+                <button @click="open = !open" @click.away="open = false" class="nav-link flex items-center gap-1">
+                    Region
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                
                 <div
                     x-cloak
                     x-show="open"
                     x-transition.origin.top
-                    class="absolute left-0 top-full mt-2 w-44 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[99999]">
-
-                    <a href="../index.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">india</a>
-                    <a href="dubai.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">dubai</a>
-                    <a href="uk.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">united kingdom</a>
-                    <a href="saudi.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">saudi arabia</a>
-                    <a href="qatar.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-xs">qatar</a>
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-40 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-[99999]"
+                >
+                    <a href="index.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-[10px] text-center">india</a>
+                    <a href="uk.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-[10px] text-center">uk</a>
+                    <a href="dubai.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-[10px] text-center">dubai</a>
+                    <a href="qatar.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-[10px] text-center">qatar</a>
+                    <a href="saudi.html" class="block px-4 py-2 text-black hover:bg-gray-100 uppercase text-[10px] text-center">saudi</a>
                 </div>
             </div>
-            
-            
-            <a href="../about.html" class="nav-link">About</a>
+
+            <a href="about.html" class="nav-link">About</a>
         </nav>
     </header>
 
     <!-- Main Content -->
-   <!-- Main Content -->
     <main class="w-full bg-[#222222] text-white">
-        <div class="flex flex-col items-center text-center w-full px-6 py-24">
+        <div class="flex flex-col items-center text-center w-full px-6 py-40">
             <h2 class="text-4xl md:text-6xl font-normal mb-8 leading-tight italic">Coming Soon...</h2>
-            <p class="max-w-lg mb-12 text-sm font-light tracking-[0.1em] leading-relaxed text-[#c0c0c0]">
-                We are curating something special. Stay tuned for our upcoming launch.
+            <p class="max-w-lg text-sm font-light tracking-[0.2em] uppercase text-[#c0c0c0]">
+                We are crafting something exceptional.
             </p>
         </div>
 
