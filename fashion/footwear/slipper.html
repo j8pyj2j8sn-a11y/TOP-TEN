@@ -8,28 +8,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap');
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100vw;
-            background-color: #ffffff;
-        }
-        
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; width: 100vw; background-color: #ffffff; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        .nav-link { 
-            font-size: 0.70rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: #4a4a4a;
-            transition: color 0.3s; 
-        }
+        .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #4a4a4a; transition: color 0.3s; }
         .nav-link:hover { color: #000000; }
-        
-        #sidebar { 
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-anim { animation: fadeIn 1.5s ease-out forwards; }
+        .slide-up-anim { animation: slideUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
@@ -94,7 +82,7 @@
                     <span>FOOTWEAR</span>
                     <span>+</span>
                 </button>
-                <ul class="submenu hidden pl-6 mt-4 text-[11px] uppercase tracking-[0.12em] text-gray-500 space-y-3">
+               <ul class="submenu hidden pl-6 mt-4 text-[11px] uppercase tracking-[0.12em] text-gray-500 space-y-3">
                     <li><a href="casual.html" class="hover:text-white transition">BE CASUAL</a></li>
                     <li><a href="formal.html" class="hover:text-white transition">BE FORMAL</a></li>
                     <li><a href="avtive.html" class="hover:text-white transition">BE ACTIVE</a></li>
@@ -156,18 +144,19 @@ document.querySelectorAll(".accordion").forEach(button => {
      <!-- Hero Section -->
     <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center fade-in-anim" 
-             style="background-image: url('accessories/background.jpg');"></div>
+             style="background-image: url('slipper/background.jpg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <!-- Gradient Blend -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0c0c0f] to-transparent"></div>
+        
         <div class="relative text-center text-white p-6 fade-in-anim">
-            <h2 class="text-4xl md:text-6xl font-serif italic">"Style: A silent confession of who you are."</h2>
+            <h2 class="text-4xl md:text-6xl font-serif italic">"Simple, stylish, and made for every step."</h2>
         </div>
     </section>
 
-     <!-- Main Content -->
-    <main class="w-full bg-[#1a1a1c] min-h-screen p-8 md:p-16">
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Cards injected here -->
-        </div>
+
+    <main class="w-full bg-[#0c0c0f] min-h-screen p-8 md:p-16">
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
     </main>
 
     <script>
@@ -175,22 +164,28 @@ document.querySelectorAll(".accordion").forEach(button => {
         const sidebar = document.getElementById('sidebar');
         const grid = document.getElementById('product-grid');
 
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
-        });
+        menuBtn.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
+
 
         // ADD OR EDIT YOUR PRODUCTS BELOW
         const products = [
-             { name: "Product Name #", link: "URL_HERE", image: "1.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "2.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
+            { name: "Jack & Jones Dark Green Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F137229702-dark-green", image: "6.jpg" },
+            { name: "Jack & Jones Olive Night Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F272979603-olive-night%3FvsFromReqId%3D019f7a7457eee12e1356408dabc588%26vsFromPid%3D9865439707419%26vsFromPos%3D2", image: "9.jpg" },
+            { name: "Bugatti Dark Blue Sandal", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fbugattishoes.in%2Fproducts%2Fbugatti-dark-blue-sandal-328-aky8a-1469-4141", image: "4.jpg" },
+            { name: "Carlton London Men's Beige Comfort Cushion Thong Arch Support Flip Flops", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fcarlton-london-men-beige-comfort-cushion-thong-arch-support-flip-flops%2Fp%2F24376549", image: "12.jpg" },
+            { name: "Jack & Jones Dark Grey Moulded Mules", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F901686806-dark-grey-moulded-mules", image: "7.jpg" },
+            { name: "Avant Men's Softstride Sliders Multi-Color", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Favant-men-softstride-sliders-multi-color%2Fp%2F25302185", image: "13.jpg" },
+            { name: "Bugatti Black Sandal", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fbugattishoes.in%2Fproducts%2Fbugatti-black-sandal-328-aky88-1069-1010", image: "5.jpg" },
+            { name: "Bata Men's Flip Flops & Sliders", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fmen%2Ffootwear%2Fflipflops-sliders%2Fc%2F6861%3Froot%3Dnav_3%26ptype%3Dlisting%252Cmen%252Cfootwear%252Cflip-flops%252C4%252Cflip-flops%26p%3D15", image: "14.jpg" },
+            { name: "Bata Men's Grey Synthetic Sliders", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fbata-men-grey-synthetic-sliders%2Fp%2F26780640", image: "15.jpg" },
+            { name: "Puma Softride Seave Xpress Men's Green Flip Flops", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fpuma-softride-seave-xpress-men-green-flipflops%2Fp%2F18993011", image: "11.jpg" },
+            { name: "Adidas Mistico Flip Flops", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fmistico--flip-flops%2FGA1050.html", image: "1.jpg" },
+            { name: "Jack & Jones Brown Textured Pool Sliders", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902024002-brown-textured-pool-sliders", image: "10.jpg" },
+            { name: "Adidas Yompzee Flip Flops", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fyompzee-flip-flops%2FKK1703.html", image: "2.jpg" },
+            { name: "Jack & Jones Turquoise Logo Print Pool Sliders", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902430701-turquoise-logo-print-pool-sliders", image: "8.jpg" },
+            { name: "Adidas Urbanscape Flip Flops", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Furbanscape-flip-flops%2FKK1704.html", image: "3.jpg" },
+
+
             
             // Add more objects like: { name: "Name", link: "Link", image: "3.jpg" },
         ];
@@ -200,7 +195,7 @@ document.querySelectorAll(".accordion").forEach(button => {
             card.className = 'group flex flex-col h-full border-2 border-slate-300 p-2';
             card.innerHTML = `
                 <div class="aspect-[3/4] bg-gray-800 overflow-hidden mb-4">
-                    <img src="accessories/images/${product.image}" 
+                    <img src="slipper/images/${product.image}" 
                          alt="${product.name}" 
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>

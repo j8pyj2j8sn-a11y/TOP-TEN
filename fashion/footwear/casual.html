@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LOCAL PRODUCT | Collections</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap');
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100vw;
-            background-color: #ffffff;
-        }
-        
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; width: 100vw; background-color: #ffffff; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        .nav-link { 
-            font-size: 0.70rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: #4a4a4a;
-            transition: color 0.3s; 
-        }
+        .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #4a4a4a; transition: color 0.3s; }
         .nav-link:hover { color: #000000; }
-        
-        #sidebar { 
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-anim { animation: fadeIn 1.5s ease-out forwards; }
+        .slide-up-anim { animation: slideUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
@@ -156,18 +144,19 @@ document.querySelectorAll(".accordion").forEach(button => {
      <!-- Hero Section -->
     <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center fade-in-anim" 
-             style="background-image: url('accessories/background.jpg');"></div>
+             style="background-image: url('casual/background.jpg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <!-- Gradient Blend -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#1a1a1c] to-transparent"></div>
+        
         <div class="relative text-center text-white p-6 fade-in-anim">
-            <h2 class="text-4xl md:text-6xl font-serif italic">"Style: A silent confession of who you are."</h2>
+            <h2 class="text-4xl md:text-6xl font-serif italic">""Every footprint tells a story; make sure yours is walking toward something good.""</h2>
         </div>
     </section>
 
-     <!-- Main Content -->
+
     <main class="w-full bg-[#1a1a1c] min-h-screen p-8 md:p-16">
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Cards injected here -->
-        </div>
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
     </main>
 
     <script>
@@ -175,23 +164,54 @@ document.querySelectorAll(".accordion").forEach(button => {
         const sidebar = document.getElementById('sidebar');
         const grid = document.getElementById('product-grid');
 
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
-        });
+        menuBtn.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
+
+
 
         // ADD OR EDIT YOUR PRODUCTS BELOW
         const products = [
-             { name: "Product Name #", link: "URL_HERE", image: "1.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "2.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            
+            { name: "New Balance Men's Faded Black Purple Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fnew-balance-mens-faded-black-purple-running-shoes%2Fp-mp000000030642049", image: "29.jpg" },
+            { name: "Jack & Jones White Product", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F128854903-white", image: "18.jpg" },
+            { name: "DECATHLON Kiprun Men Grey Jogflow 190.1 Superior Grip Cushioned Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fkiprun-men-grey-jogflow-1901-superior-grip-cushioned-running-shoes%2Fp-mp000000030162623", image: "22.jpg" },
+            { name: "Nike Uplift SC GS Unisex Green Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fnike-uplift-sc-gs-unisex-green-running-shoes%2Fp%2F26274654", image: "34.jpg" },
+            { name: "Puma Men's Galaxis Pro Core Black Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fpuma-mens-galaxis-pro-core-black-running-shoes%2Fp-mp000000025432826", image: "20.jpg" },
+            { name: "Nike Flex Train Women's Workout Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fnike-flex-train-women-s-workout-shoes%2Fp%2F26354167", image: "37.jpg" },
+            { name: "Nike Journey Run Men's Road Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fnike-journey-run-men-s-road-running-shoes%2Fp%2F25271411", image: "35.jpg" },
+            { name: "Under Armour Unisex Echo Multicolor Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Funder-armour-unisex-echo-multicolor-running-shoes%2Fp-mp000000028812290", image: "23.jpg" },
+            { name: "Adidas Comfort Walk Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fcomfort-walk-shoes%2FIU6505.html", image: "1.jpg" },
+            { name: " PUMA Fade Pro Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Ffade-pro-running-shoes%2Fp-mp000000024380934", image: "21.jpg" },
+            { name: "Skechers Men's Go Run Now Stover Black Slip-ins Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fskechers-mens-go-run-now-stover-black-slip-ins-running-shoes%2Fp-mp000000027784435", image: "28.jpg" },
+            { name: "Jack & Jones Navy Blue PU Lace-Up Sneakers", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F902430601-navy-blue-pu-lace-up-sneakers", image: "17.jpg" },
+            { name: "Adidas Fleecewalk Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Ffleecewalk-shoes%2FIQ8955.html", image: "2.jpg" },
+            { name: "U.S. Polo Assn. Men's Sorrento 50 Black Sneakers", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fus-polo-assn-mens-sorrento-50-black-sneakers%2Fp-mp000000029793873", image: "25.jpg" },
+            { name: "Jack & Jones White Product", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F187047001-white", image: "16.jpg" },
+            { name: "Jack & Jones Black Product", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.jackjones.in%2Fproducts%2F186652701-black%3FvsFromReqId%3D019f79b52cd7352265c12c6a36c67e%26vsFromPid%3D9863577534747%26vsFromPos%3D13", image: "19.jpg" },
+            { name: "Nike Air Max Alpha Trainer 5 Men's Blue Workout Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fnike-air-max-alpha-trainer-5-men-blue-workout-shoes%2Fp%2F25352580", image: "39.jpg" },
+            { name: "Adidas Amalgo Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Famalgo-shoes%2FIU6241.html", image: "3.jpg" },
+            { name: "Adidas Ultra Response Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fultra-response-shoes%2FIQ9176.html", image: "4.jpg" },
+            { name: "Under Armour Men's Charged Surge 4 Black Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Funder-armour-mens-charged-surge-4-black-running-shoes%2Fp-mp000000023161162", image: "24.jpg" },
+            { name: "Adidas Jolt Runner Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fjolt-runner-shoes%2FIU6320.html", image: "5.jpg" },
+            { name: "Adidas Axelate Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Faxelate-shoes%2FGB2480.html", image: "6.jpg" },
+            { name: "U.S. Polo Assn. Women's Lizzie 30 Off-White Casual Sneakers", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fus-polo-assn-womens-lizzie-30-off-white-casual-sneakers%2Fp-mp000000029204307", image: "27.jpg" },
+            { name: "Nike Sports Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fcatalogsearch%2Fresult%2F%3Fq%3DNike%2BSports%2BShoes%26ptype%3Dsearch%26searchType%3DSearchedFromSuggestions%26internalSearchTerm%3DNike%2BSports%2BShoes%26typedSearchTerm%3Dnike%2B%26suggestionType%3Dquery", image: "36.jpg" },
+            { name: "Decathlon Men's Football Shoes Agility 140 HG - Blue/Green", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.decathlon.in%2Fp%2F8549663%2Fmen-s-football-shoes-agility-140-hg-blue-green", image: "32.jpg" },
+            { name: "Decathlon Adult Basketball Shoe Xover 100 Mid Cut - Orange/Black", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.decathlon.in%2Fp%2F8976024%2Fadult-basketball-shoe-xover-100-mid-cut-orange-black", image: "33.jpg" },
+            { name: "U.S. Polo Assn. Men's Coba20 Navy Sneakers", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fus-polo-assn-mens-coba20-navy-sneakers%2Fp-mp000000029560134", image: "26.jpg" },
+            { name: "Adidas Racer TR23 Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fracer-tr23-shoes%2FIG7325.html", image: "7.jpg" },
+            { name: "Adidas Grand Court 2.0 Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fgrand-court-2.0-shoes%2FGW9195.html", image: "8.jpg" },
+            { name: "Decathlon JF 190 Grip Men's Road and Trail Running Shoes - Grey", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.decathlon.in%2Fp%2F8913926%2Fjf-190-grip-men-s-road-and-trail-running-shoes-grey", image: "30.jpg" },
+            { name: "Adidas Courun Avant Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fcourun-avant-shoes%2FIQ8890.html", image: "9.jpg" },
+            { name: "Adidas Alphaboost V2 Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Falphaboost-v2-shoes%2FJH6957.html", image: "10.jpg" },
+            { name: "Adidas Cloudfoam Go Lounger Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fcloudfoam-go-lounger-shoes%2FID4021.html", image: "11.jpg" },
+            { name: "Decathlon Adult Basketball Shoes Essential 100 - Black", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.decathlon.in%2Fp%2F8881082%2Fadult-basketball-shoes-essential-100-black", image: "31.jpg" },
+            { name: "Nike Air Zoom Upturn SC Men's White Running Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.nykaafashion.com%2Fnike-air-zoom-upturn-sc-men-white-running-shoes%2Fp%2F26067462", image: "38.jpg" },
+            { name: "Adidas Alpharesponse Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Falpharesponse-shoes%2FIE6348.html", image: "12.jpg" },
+            { name: "Adidas Cloudfoam Go Sock Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fcloudfoam-go-sock-shoes%2FID4034.html", image: "13.jpg" },
+            { name: "Adidas Anthony Edwards 2 Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fanthony-edwards-2-shoes%2FKJ1885.html", image: "14.jpg" },
+            { name: "Adidas Initiation Shoes", link: "https://linksredirect.com/?cid=302985&source=linkkit&url=https%3A%2F%2Fwww.adidas.co.in%2Fadidas-initiation-shoes%2FJQ6861.html", image: "15.jpg" },
+
+
+
             // Add more objects like: { name: "Name", link: "Link", image: "3.jpg" },
         ];
 
@@ -200,7 +220,7 @@ document.querySelectorAll(".accordion").forEach(button => {
             card.className = 'group flex flex-col h-full border-2 border-slate-300 p-2';
             card.innerHTML = `
                 <div class="aspect-[3/4] bg-gray-800 overflow-hidden mb-4">
-                    <img src="accessories/images/${product.image}" 
+                    <img src="casual/images/${product.image}" 
                          alt="${product.name}" 
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
