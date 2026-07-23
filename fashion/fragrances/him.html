@@ -8,28 +8,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap');
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100vw;
-            background-color: #ffffff;
-        }
-        
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; width: 100vw; background-color: #080707; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        .nav-link { 
-            font-size: 0.70rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: #4a4a4a;
-            transition: color 0.3s; 
-        }
+        .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #4a4a4a; transition: color 0.3s; }
         .nav-link:hover { color: #000000; }
-        
-        #sidebar { 
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-anim { animation: fadeIn 1.5s ease-out forwards; }
+        .slide-up-anim { animation: slideUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
@@ -90,8 +78,8 @@
                         <li><a href="../footwear/casual.html" class="hover:text-white transition">BE CASUAL</a></li>
                         <li><a href="../footwear/formal.html" class="hover:text-white transition">BE FORMAL</a></li>
                         <li><a href="../footwear/active.html" class="hover:text-white transition">BE ACTIVE</a></li>
-                        <li><a href="../footwear/slippers.html" class="hover:text-white transition">SLIPPERS</a></li>
-                        <li><a href="../footwear/sandals.html" class="hover:text-white transition">SANDALS</a></li>
+                        <li><a href="../footwear/slipper.html" class="hover:text-white transition">SLIPPERS</a></li>
+                        <li><a href="../footwear/sandal.html" class="hover:text-white transition">SANDALS</a></li>
                     </ul>
                 </li>
                 <!-- ESSENTIALS -->
@@ -138,24 +126,24 @@
         });
     </script>
 
-    <!-- Hero Section -->
+    </script>
+
+     <!-- Hero Section -->
     <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center fade-in-anim" 
-             style="background-image: url('background1.jpg');"></div>
+             style="background-image: url('him/background1.jpg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <!-- Gradient Blend -->
         <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#1a1a1c] to-transparent"></div>
         
         <div class="relative text-center text-white p-6 fade-in-anim">
-            <h2 class="text-4xl md:text-6xl font-serif italic">"Scent Speaks First"</h2>
+            <h2 class="text-4xl md:text-6xl font-serif italic">"Style is your silent introduction."</h2>
         </div>
     </section>
 
-    <!-- Main Content -->
+
     <main class="w-full bg-[#1a1a1c] min-h-screen p-8 md:p-16">
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Cards injected here -->
-        </div>
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
     </main>
 
     <script>
@@ -163,21 +151,19 @@
         const sidebar = document.getElementById('sidebar');
         const grid = document.getElementById('product-grid');
 
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
-        });
-
+        menuBtn.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
         const products = [
-             { name: "Product Name #", link: "URL_HERE", image: "1.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "2.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
-            { name: "Product Name #", link: "URL_HERE", image: "#.jpg" },
+            { name: "Jaguar Classic Chromite Eau de Toilette - 100 ml", link: "https://linksredirect.com/?cid=305010&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fjaguar-classic-chromite-eau-de-toilette-for-men-100-ml%2Fp-mp000000007906642", image: "2.jpg" },
+            { name: "Davidoff Cool Water Eau de Toilette - 75 ml", link: "https://linksredirect.com/?cid=305010&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fdavidoff-cool-water-eau-de-toilette-75-ml-for-men%2Fp-mp000000010893026", image: "1.jpg" },
+            { name: "David Beckham Refined Woods Eau de Parfum - 100 ml", link: "https://linksredirect.com/?cid=305010&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fdavid-beckham-refined-woods-eau-de-parfum-for-men-100-ml%2Fp-mp000000019660950", image: "3.jpg" },
+            { name: "Wild Stone Ultra Sensual Perfume", link: "https://www.amazon.in/Wild-Stone-Ultra-Sensual-Perfume/dp/B08TGY698Y?source=ps-sl-shoppingads-lpcontext&smid=A15APWRK6P7LBV&th=1&linkCode=ll2&tag=bestprice690e-21&linkId=7f0439f0d16def691685f7f1af74cbc6&ref_=as_li_ss_tl", image: "6.jpg" },
+            { name: "Remy Marquis Shalis Eau de Toilette - 100 ml", link: "https://www.amazon.in/Remy-Marquis-Shalis-Toilette-Spray/dp/B075W783KH?crid=CPI4AYKL4EI5&dib=eyJ2IjoiMSJ9.8aJnTTBeQaggCV2PR0RSUoFzuh1uvH0ckrtnTZv7DIE39Wb3pcuMHHsY26GFOhT3AOMd-UPoEetqIFdkOjFyru2zBI7h1ywxt01wSWWQpe6HWZsxBhZdnQPjGjQJaMiq2qeLmRqN2G8GNuY7RlZhAJLISGn5tmnlOKd7nrmuaXgB8TXLna6R_Hj7xyjA93hvQXopicWwsjmAaRFqu7w7dHIbu8QCNdiuY-K4bp4DB4gjMLwtpz0WVF12b4zHwlMsivIHhP43ionzPrfnrWNWZi7324LeviaL4X27ELCALTk.qlQaw77V_idv9nnOgo-chdyalF8JrJvpkhBxdWCB2CM&dib_tag=se&keywords=remi+marquis+perfume&qid=1784818510&sprefix=remi+ma%2Caps%2C461&sr=8-10&linkCode=ll2&tag=bestprice690e-21&linkId=b746598bebc5b4649423415d6e764ca4&ref_=as_li_ss_tl", image: "4.jpg" },
+            { name: "Jaguar For Men Gold In Black Eau de Toilette - 100 ml", link: "https://linksredirect.com/?cid=305010&source=linkkit&url=https%3A%2F%2Fwww.tatacliq.com%2Fjaguar-for-men-gold-in-black-eau-de-toilette-100-ml%2Fp-mp000000011263124", image: "10.jpg" },
+            { name: "Bella Vita Organic Luxury Perfume Gift Set for Men", link: "https://www.amazon.in/Bella-Vita-Organic-Perfume-Office/dp/B08H26SHRP?source=ps-sl-shoppingads-lpcontext&smid=A15APWRK6P7LBV&th=1&linkCode=ll2&tag=bestprice690e-21&linkId=686bd679b17348d7eb465828a3785128&ref_=as_li_ss_tl", image: "5.jpg" },
+            { name: "Wild Stone Edge Perfume - 50 ml", link: "https://www.amazon.in/Wild-Stone-Edge-Perfume-50ml/dp/B07KS1ZKV3?utm_source=chatgpt.com&th=1&linkCode=ll2&tag=bestprice690e-21&linkId=806bb93e86952a0560dc16ecef2342bb&ref_=as_li_ss_tl", image: "8.jpg" },
+            { name: "Upsilon Wild Blue Eau de Parfum for Men", link: "https://www.amazon.in/Upsilon-Concentration-Lasting-Perfume-Distilled/dp/B0BDZRQD18?dib=eyJ2IjoiMSJ9.BTV-_bG6raIWEGB9B-Sx6bNWaXuBHLHPvAu3Zsw_cBJTPD0TJXD8j8_b8j8NR_mV8MEAFGGlQLKY_EgVjgvSHKBnLLvL-TpqfsOonoTaN6oasmjtkCGVkrQwTq_ABQCXt73Vo6pGZ0YfY1JAPDQctAoLvPYRdRa_XqKo4eZ7gaF5GANwDaGFY6DvVJ8Di4RD2A1Sq8MvrRsK72pY6V0nur604GQIK524OOAJ-Cpu2eMYS65US3HWQd-ocq-tk4LBUYQGsKkRg5BdDKzzXTxLnWzT7qtyToqkr4IWCAxVlak.FwVy1G8R6baCO9k_jjJmfnJwCxkqIqOPwZiC9lmdGbU&dib_tag=se&keywords=Wild%2BStone%2BHero%2BPerfume%2Bfor%2BMen&qid=1784818886&sr=8-2-spons&utm_source=chatgpt.com&aref=MlcjwMqmzY&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll2&tag=bestprice690e-21&linkId=26657511eba9324e817c3fea52c6ea06&ref_=as_li_ss_tl", image: "9.jpg" },
+            { name: "Villain Hydra Eau de Parfum", link: "https://www.amazon.in/Villain-Hydra-Perfume-Eau-Parfum/dp/B08L6LNCY9?source=ps-sl-shoppingads-lpcontext&smid=ADACSD4ANFTER&th=1&linkCode=ll2&tag=bestprice690e-21&linkId=1560deb6ea4b50dccb747c983c7bb91d&ref_=as_li_ss_tl", image: "7.jpg" },
+
         ];
 
         products.forEach((product) => {
@@ -185,7 +171,7 @@
             card.className = 'group flex flex-col h-full border-2 border-slate-300 p-2';
             card.innerHTML = `
                 <div class="aspect-[3/4] bg-gray-800 overflow-hidden mb-4">
-                    <img src="accessories/images/${product.image}" 
+                    <img src="him/images/${product.image}" 
                          alt="${product.name}" 
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>

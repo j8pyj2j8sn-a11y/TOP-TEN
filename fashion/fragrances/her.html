@@ -8,28 +8,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap');
         
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100vw;
-            background-color: #ffffff;
-        }
-        
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; width: 100vw; background-color: #080808; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        .nav-link { 
-            font-size: 0.70rem; 
-            letter-spacing: 0.2em; 
-            text-transform: uppercase; 
-            color: #4a4a4a;
-            transition: color 0.3s; 
-        }
+        .nav-link { font-size: 0.70rem; letter-spacing: 0.2em; text-transform: uppercase; color: #4a4a4a; transition: color 0.3s; }
         .nav-link:hover { color: #000000; }
-        
-        #sidebar { 
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
+        #sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-anim { animation: fadeIn 1.5s ease-out forwards; }
+        .slide-up-anim { animation: slideUp 1s ease-out forwards; }
     </style>
 </head>
 <body>
@@ -98,8 +86,8 @@
                     <li><a href="../footwear/casual.html" class="hover:text-white transition">BE CASUAL</a></li>
                     <li><a href="../footwear/formal.html" class="hover:text-white transition">BE FORMAL</a></li>
                     <li><a href="../footwear/active.html" class="hover:text-white transition">BE ACTIVE</a></li>
-                    <li><a href="../footwear/slippers.html" class="hover:text-white transition">SLIPPERS</a></li>
-                    <li><a href="../footwear/sandals.html" class="hover:text-white transition">SANDALS</a></li>
+                    <li><a href="../footwear/slipper.html" class="hover:text-white transition">SLIPPERS</a></li>
+                    <li><a href="../footwear/sandal.html" class="hover:text-white transition">SANDALS</a></li>
                 </ul>
             </li>
 
@@ -156,18 +144,19 @@ document.querySelectorAll(".accordion").forEach(button => {
      <!-- Hero Section -->
     <section class="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center fade-in-anim" 
-             style="background-image: url('accessories/background.jpg');"></div>
+             style="background-image: url('her/background.jpg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <!-- Gradient Blend -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#1a1a1c] to-transparent"></div>
+        
         <div class="relative text-center text-white p-6 fade-in-anim">
-            <h2 class="text-4xl md:text-6xl font-serif italic">"Style: A silent confession of who you are."</h2>
+            <h2 class="text-4xl md:text-6xl font-serif italic">"A woman's perfume tells more about her than her handwriting." — Christian Dior</h2>
         </div>
     </section>
 
-     <!-- Main Content -->
+
     <main class="w-full bg-[#1a1a1c] min-h-screen p-8 md:p-16">
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <!-- Cards injected here -->
-        </div>
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
     </main>
 
     <script>
@@ -175,9 +164,7 @@ document.querySelectorAll(".accordion").forEach(button => {
         const sidebar = document.getElementById('sidebar');
         const grid = document.getElementById('product-grid');
 
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
-        });
+        menuBtn.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
 
         // ADD OR EDIT YOUR PRODUCTS BELOW
         const products = [
@@ -200,7 +187,7 @@ document.querySelectorAll(".accordion").forEach(button => {
             card.className = 'group flex flex-col h-full border-2 border-slate-300 p-2';
             card.innerHTML = `
                 <div class="aspect-[3/4] bg-gray-800 overflow-hidden mb-4">
-                    <img src="accessories/images/${product.image}" 
+                    <img src="her/images/${product.image}" 
                          alt="${product.name}" 
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
